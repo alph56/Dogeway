@@ -11,8 +11,7 @@
 <img class="rana" src="../Imagenes/Rana_blanco.png">
         <div class="logo"> DOGEWAY</div> </div>
         <ul class="menu">
-            <li><a href="index.html">PAGINA PRINCIPAL</a></li>
-            <li><a href="nosotros.html">NOSOTROS</a></li>
+            <li><a href="../index.php">PAGINA PRINCIPAL</a></li>
         </ul>
 </nav>
 
@@ -21,6 +20,9 @@
     <form action="enviar_email.php" method="post">
          <!-- <label for="">Fotografia:</label>
         <input type="file" name="fotografia"><br><br>  -->
+
+        <div id="mensaje-de-error"></div>
+        <div id="mensaje-de-exito"></div>
 
         <div class=columna>
 
@@ -48,7 +50,7 @@
         <input type="submit" name="registrar" value="Registrar">
     </form>
     <div class=registro2>
-    <a href="../Inicio/inicio.php">Ya tienes una cuenta? Inicia sesión</a>
+    <a href="../Inicio/iniciosesion.php">Ya tienes una cuenta? Inicia sesión</a>
     </div>
 </div>
 

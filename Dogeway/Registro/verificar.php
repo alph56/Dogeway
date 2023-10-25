@@ -26,17 +26,25 @@ if (isset($_GET['email']) && isset($_GET['codigo'])) {
         $stmt->bind_param("s", $email);
     
         if ($stmt->execute()) {
-            echo "Su cuenta ha sido verificada con éxito. Ahora puede iniciar sesión.";
+            echo '<script>';
+                echo 'document.getElementById("mensaje-de-exito").innerHTML = "Su cuenta ha sido verificada con éxito. Ahora puede iniciar sesión.";';
+            echo '</script>';
         } else {
-            echo "Error al actualizar la cuenta: " . $stmt->error;
+            echo '<script>';
+             echo 'document.getElementById("mensaje-de-error").innerHTML = "Error al actualizar la cuenta";' . $stmt->error;
+            echo '</script>';
         }
     } else {
-        echo "La verificación ha fallado. Verifique el link enviado.";
+        echo '<script>';
+        echo 'document.getElementById("mensaje-de-error").innerHTML = "La verificacion ha fallado, verifique su link";';
+        echo '</script>';
     }
 
     $stmt->close();
 } else {
-    echo "La URL de verificación es incorrecta.";
+    echo '<script>';
+    echo 'document.getElementById("mensaje-de-error").innerHTML = "Su cuenta ha sido verificada con éxito. Ahora puede iniciar sesión.";';
+    echo '</script>';
 }
 
 $conn->close();

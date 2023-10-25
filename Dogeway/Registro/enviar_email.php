@@ -37,7 +37,7 @@ if (isset($_POST['registrar'])) {
     $subject = 'Verificar su cuenta de DogeWay';
     $message = "Hola $nombre $apellidos.\n\n";
     $message .= "Por favor, haga clic en el siguiente enlace para verificar su correo electrónico:\n";
-    $message .= "http://localhost/mascotas/Registro/verificar.php?email=$email&codigo=$codigo_verificacion";
+    $message .= "http://localhost/dogeway/Registro/verificar.php?email=$email&codigo=$codigo_verificacion";
 
     $mail = new PHPMailer();
 
@@ -81,9 +81,13 @@ if (isset($_POST['registrar'])) {
             // $ine, $fotografia Ingresar estos datos al stmt despues.
             
             if ($stmt->execute()) {
-                echo 'Se ha enviado un correo de verificación a su dirección de correo electrónico. Por favor, verifíquelo para completar el registro.';
+                echo '<script>';
+                    echo 'document.getElementById("mensaje-de-exito").innerHTML = "Se ha enviado un correo de verificación a su dirección de correo electrónico. Por favor, verifíquelo para completar el registro.";';
+                echo '</script>';
             } else {
-                echo 'Error al insertar el usuario en la base de datos: ' . $stmt->error;
+                echo '<script>';
+                    echo 'document.getElementById("mensaje-de-error").innerHTML = "Error al insertar el usuario en la base de datos";';
+                echo '</script>';
             }
             
             $stmt->close();
@@ -95,6 +99,8 @@ if (isset($_POST['registrar'])) {
     } catch (Exception $e) {
         echo 'Error al enviar el correo: ' . $e->getMessage();
     }
-}else { echo 'El email introducido NO es correcto!'; }
+}else { echo '<script>';
+    echo 'document.getElementById("mensaje-de-error").innerHTML = "Ingrese un correo valido";';
+echo '</script>'; }
 }
 ?>
