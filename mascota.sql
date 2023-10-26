@@ -41,7 +41,9 @@ CREATE TABLE `usuario` (
   `municipio` varchar(50) NOT NULL,
   `fechanac` date NOT NULL,
   `fotografia` text NOT NULL,
-  `ine` text NOT NULL
+  `ine` text NOT NULL,
+  `dato_match` TINYINT(1) NOT NULL,
+  foreign key(`dato_match`) references match(`amistad`, `cruza`, `adopcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -71,13 +73,28 @@ COMMIT;
 
 CREATE TABLE `mascota`(
   `caract_fisicas` varchar(255) NOT NULL,
-  `nickname_dueno` varchar(100) NOT NULL,
-  `nombre_mascota` varchar(100) NOT NULL,
-  `status_salud` varchar(255) NOT NULL,
-  `edad` varchar(5) NOT NULL,
+  `nickname_dueno` varchar(30) NOT NULL,
+  `nombre_mascota` varchar(30) NOT NULL,
+  `status_salud` varchar(150) NOT NULL,
+  `edad` int(3) NOT NULL,
   `raza` varchar(50) NOT NULL,
-  `id_dueno` int (11) NOT NULL,
+  `id_dueno` int(11) NOT NULL,
   `fotografia_masc` text NOT NULL,
-  foreign kEY(nickname_dueno) references usuario(nickname),
-  foreign KEY(id_dueno) REFERENCES usuario(id) 
+  foreign kEY(`nickname_dueno`) references usuario(`nickname`),
+  foreign KEY(`id_dueno`) REFERENCES usuario(`id`) 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `match`(
+  TINYINT(1) DEFAULT 0,
+  `cruza` TINYINT(1) DEFAULT 0,
+  `adopcion` TINYINT(1) DEFAULT 0
+);
+
+CREATE TABLE `chat`(
+  `nickname_persona1` varchar(30) NOT NULL,
+  `nickname_persona2` varchar(30) NOT NULL,
+  `mensaje` varchar(255) NOT NULL,
+  `fecha` date NOT NULL,
+  `datos_match` TINYINT(1) NOT NULL,
+  FOREIGN KEY(`datos_match`) REFERENCES match(`amistad`, `cruza`, `adopcion`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
