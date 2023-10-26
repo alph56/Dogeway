@@ -70,11 +70,14 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 CREATE TABLE `mascota`(
-  `caract-fisicas` varchar(255) NOT NULL,
-  `status-salud` varchar(255) NOT NULL,
+  `caract_fisicas` varchar(255) NOT NULL,
+  `nickname_dueno` varchar(100) NOT NULL,
+  `nombre_mascota` varchar(100) NOT NULL,
+  `status_salud` varchar(255) NOT NULL,
   `edad` varchar(5) NOT NULL,
   `raza` varchar(50) NOT NULL,
   `id_dueno` int (11) NOT NULL,
-  `fotografia` text NOT NULL,
+  `fotografia_masc` text NOT NULL,
+  foreign kEY(nickname_dueno) references usuario(nickname),
   foreign KEY(id_dueno) REFERENCES usuario(id) 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
