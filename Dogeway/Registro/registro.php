@@ -50,7 +50,7 @@
         <input type="submit" name="registrar" value="Registrar">
     </form>
     <div class=registro2>
-    <a href="../Inicio/iniciosesion.php">Ya tienes una cuenta? Inicia sesión</a>
+    <a href="../Inicio/index.php">Ya tienes una cuenta? Inicia sesión</a>
     </div>
 </div>
 
