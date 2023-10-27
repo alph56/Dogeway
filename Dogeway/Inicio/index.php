@@ -16,15 +16,19 @@ if(isset($_SESSION['user'])){
     $userForm = $_POST['username'];
     $passForm = $_POST['password'];
 
-    if($user->userExists($userForm, $passForm)){
-        //echo "usuario validado";
+    if ($user->userExists($userForm, $passForm) === true) {
+        // Usuario válido y verificado
         $userSession->setCurrentUser($userForm);
         $user->setUser($userForm);
-
         include_once 'home.php';
-    }else{
-        //echo "nombre de usuario y/o password incorrecto";
-        $errorLogin = "Nombre de usuario y/o password es incorrecto";
+    } elseif ($user->userExists($userForm, $passForm) === "nover") {
+        // El usuario existe pero no está verificado
+        $errorLogin = "Tu cuenta no está verificada.";
+        include_once 'includes/iniciosesion.php';
+       
+    } else {
+        // El usuario no existe o contraseña incorrecta
+        $errorLogin = "Nickname y/o contraseña es incorrecto.";
         include_once 'includes/iniciosesion.php';
     }
 

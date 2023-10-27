@@ -7,14 +7,21 @@ class User extends DB{
     private $nombre;
     private $username;
 
-    public function userExists($user, $pass){
-
-        $query = $this->connect()->prepare('SELECT * FROM usuario WHERE nickname = :user AND pass = :pass AND verificado = 1');
+    public function userExists($user, $pass) {
+        $query = $this->connect()->prepare('SELECT * FROM usuario WHERE nickname = :user AND pass = :pass');
         $query->execute(['user' => $user, 'pass' => $pass]);
-
-        if($query->rowCount()){
-            return true;
-        }else{
+    
+        if ($query->rowCount()) {
+            $userData = $query->fetch(PDO::FETCH_ASSOC);
+            if ($userData['verificado'] == 1) {
+                // El usuario está verificado
+                return true;
+            } else {
+                // El usuario no está verificado
+                return "nover";
+            }
+        } else {
+            // El usuario no existe
             return false;
         }
     }

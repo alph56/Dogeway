@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="CSS/style.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/CSS.css" rel="stylesheet" type="text/css" />
     <title>Inicio de sesión</title>
 </head>
 <body>
@@ -17,13 +17,15 @@
 
 <div class= inicio>
     <h2 class="titulo">INICIAR SESIÓN</h2>
-    <form action="" method="POST">
+
         <?php
             if(isset($errorLogin)){
-            echo $errorLogin;
+                echo '<div style="color: red; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 11px; margin-bottom: 15px;">' . $errorLogin . '</div>';
             }
         ?>
 
+    <form action="" method="POST">
+        
         <div class=columna> 
             <input type="text" name="username" required placeholder="Ingresa tu nickname"><br><br>
             <input type="password" name="password" required placeholder="Ingresa tu contraseña"><br><br>
