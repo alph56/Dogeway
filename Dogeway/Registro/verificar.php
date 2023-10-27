@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "mascota";
+$database = "dogeway";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
@@ -26,25 +26,25 @@ if (isset($_GET['email']) && isset($_GET['codigo'])) {
         $stmt->bind_param("s", $email);
     
         if ($stmt->execute()) {
-            echo '<script>';
-                echo 'document.getElementById("mensaje-de-exito").innerHTML = "Su cuenta ha sido verificada con éxito. Ahora puede iniciar sesión.";';
-            echo '</script>';
+
+                echo "Su cuenta ha sido verificada con éxito. Ahora puede iniciar sesión."; 
+
         } else {
-            echo '<script>';
-             echo 'document.getElementById("mensaje-de-error").innerHTML = "Error al actualizar la cuenta";' . $stmt->error;
-            echo '</script>';
+        
+             echo "Error al actualizar la cuenta" . $stmt->error;
+        
         }
     } else {
-        echo '<script>';
-        echo 'document.getElementById("mensaje-de-error").innerHTML = "La verificacion ha fallado, verifique su link";';
-        echo '</script>';
+    
+        echo "La verificacion ha fallado, verifique su link";
+
     }
 
     $stmt->close();
 } else {
-    echo '<script>';
-    echo 'document.getElementById("mensaje-de-error").innerHTML = "Su cuenta ha sido verificada con éxito. Ahora puede iniciar sesión.";';
-    echo '</script>';
+  
+    echo "Su cuenta ha sido verificada con éxito. Ahora puede iniciar sesión.";
+  
 }
 
 $conn->close();

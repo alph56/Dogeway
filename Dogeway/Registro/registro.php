@@ -3,6 +3,16 @@
 <head>
     <link href="CSS/style.css" rel="stylesheet" type="text/css" />
     <title>Registro de Cuenta</title>
+
+    <script>
+        function mostrarError(mensaje) {
+            var errorElement = document.getElementById('error-message');
+            if (errorElement) {
+                errorElement.textContent = mensaje;
+                errorElement.style.display = 'block';
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -17,12 +27,20 @@
 
 <div class= registro>
     <h2 class="titulo">REGISTRATE</h2>
+    
+        <div id="error-message" style="color: red; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 12px; margin-bottom: 17px;"></div>
+        <?php
+            if (isset($_GET['error'])) {
+                $errorRegistro = urldecode($_GET['error']);
+                echo '<script>';
+                echo 'mostrarError("' . $errorRegistro . '");';
+                echo '</script>';
+            }
+        ?>
+
     <form action="enviar_email.php" method="post">
          <!-- <label for="">Fotografia:</label>
         <input type="file" name="fotografia"><br><br>  -->
-
-        <div id="mensaje-de-error"></div>
-        <div id="mensaje-de-exito"></div>
 
         <div class=columna>
 
@@ -39,13 +57,11 @@
 
             <input type="text" name="telefono" required placeholder="Introduce tu telefono"><br><br>
             <input type="text" name="curp" required placeholder="Introduce tu curp"><br><br>
+            <input type="text" name="ine" required placeholder="Introduce tu INE"><br><br>
             <label>Fecha de nacimiento:</label>
             <input type="date" name="fechanac" required><br><br>
         
         </div>
-
-        <!-- <label for="">INE:</label>
-        <input type="file" name="ine"><br><br>  -->
 
         <input type="submit" name="registrar" value="Registrar">
     </form>
