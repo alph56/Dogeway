@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2023 a las 04:54:25
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.0.28
+-- Host: 127.0.0.1
+-- Generation Time: Oct 28, 2023 at 09:30 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,34 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `dogeway`
+-- Database: `dogeway`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `mascota`
+--
+
+CREATE TABLE `mascota` (
+  `id` int(11) NOT NULL,
+  `nombreMascota` varchar(32) NOT NULL,
+  `nicknameUsuario` varchar(32) NOT NULL,
+  `descripcion` varchar(128) NOT NULL,
+  `especie` varchar(32) NOT NULL,
+  `raza` varchar(40) NOT NULL,
+  `edad` int(11) NOT NULL,
+  `cartilla` varchar(128) NOT NULL,
+  `especificaciones` varchar(256) NOT NULL,
+  `caracteristicas` varchar(256) NOT NULL,
+  `fotografiaMascota` varchar(128) NOT NULL,
+  `estatus` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -45,33 +66,43 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nombre`, `email`, `codigo_verificacion`, `verificado`, `pass`, `curp`, `telefono`, `nickname`, `apellidos`, `municipio`, `fechanac`, `fotografia`, `ine`) VALUES
-(16, 'Danilo', 'esequien333@gmail.com', 'c229261ba37fa20748996bca0a7cb670', 1, '123', 'sdfsdfssfsdfsd', '+528715243308', 'DanCatFly', 'Juarez Silva', '54231', '2003-02-12', '', ''),
-(17, 'fsdfsd', 'daniel.juarez0204@alumnos.udg.mx', '1a2e2f95725b57b0fe9b4c42ceb9a50d', 0, '123', '312312312', '+528715243308', 'samnette', 'fsdfsdfs', '312312', '2003-02-12', '', ''),
-(27, 'Daniel Antonio', 'dangatovolador@gmail.com', 'f95ae455e52ed86f571427d89b1c566d', 1, '123', '543543', '+528715243308', 'tumama', 'Juarez Silva', '432423423', '2003-02-12', '', 'ineunico');
+(28, 'Samantha', 'moonly.exe.uwu15@gmail.com', 'e8366e7cdefb1dfc0b1144f41de0c7cb', 0, '1235', 'ASDFGHJKL', '1234567890', 'samnette', 'Telles', 'Guadalajara', '2003-10-23', '', 'QWERTYUIOP');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `usuario`
+-- Indexes for table `mascota`
+--
+ALTER TABLE `mascota`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT for table `mascota`
+--
+ALTER TABLE `mascota`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
