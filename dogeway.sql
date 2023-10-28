@@ -100,3 +100,13 @@ CREATE TABLE `chat`(
   `datos_match` TINYINT(1) NOT NULL,
   FOREIGN KEY(`datos_match`) REFERENCES match(`amistad`, `cruza`, `adopcion`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `bloquear`(
+  `id_bloquear` int(11) NOT NULL,
+  `id_bloqueado` int(11) NOT NULL,
+  `fecha_bloqueo` date NOT NULL,
+  `razon` varchar(255) NOT NULL,
+  FOREIGN KEY(`id_bloquear`) REFERENCES usuario(`id`),
+  FOREIGN KEY(`id_bloqueado`) REFERENCES usuario(`id`),
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
