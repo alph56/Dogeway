@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2023 at 09:30 PM
+-- Generation Time: Oct 28, 2023 at 09:39 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -70,7 +70,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nombre`, `email`, `codigo_verificacion`, `verificado`, `pass`, `curp`, `telefono`, `nickname`, `apellidos`, `municipio`, `fechanac`, `fotografia`, `ine`) VALUES
-(28, 'Samantha', 'moonly.exe.uwu15@gmail.com', 'e8366e7cdefb1dfc0b1144f41de0c7cb', 0, '1235', 'ASDFGHJKL', '1234567890', 'samnette', 'Telles', 'Guadalajara', '2003-10-23', '', 'QWERTYUIOP');
+(27, 'Daniel Antonio', 'dangatovolador@gmail.com', 'f95ae455e52ed86f571427d89b1c566d', 1, '123', '543543', '+528715243308', 'tumama', 'Juarez Silva', '432423423', '2003-02-12', '', 'ineunico'),
+(28, 'Samantha', 'moonly.uwu15@gmail.com', 'e8366e7cdefb1dfc0b1144f41de0c7cb', 1, '1235', 'ASDFGHJKL', '1234567890', 'samnette', 'Telles', 'Guadalajara', '2003-10-23', '', 'QWERTYUIOP');
 
 --
 -- Indexes for dumped tables
