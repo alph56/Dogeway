@@ -45,7 +45,7 @@ CREATE TABLE `usuario` (
   `fotografia` text NOT NULL,
   `ine` text NOT NULL,
   `dato_match` TINYINT(1) NOT NULL,
-  foreign key(`dato_match`) references match(`amistad`, `cruza`, `adopcion`)
+  foreign key(`dato_match`) references matchs(`amistad`, `cruza`, `adopcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -86,7 +86,7 @@ CREATE TABLE `mascota`(
   foreign KEY(`id_dueno`) REFERENCES usuario(`id`) 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE `match`(
+CREATE TABLE `matchs`(
   `amistad` TINYINT(1) DEFAULT 0,
   `cruza` TINYINT(1) DEFAULT 0,
   `adopcion` TINYINT(1) DEFAULT 0
@@ -98,7 +98,7 @@ CREATE TABLE `chat`(
   `mensaje` varchar(255) NOT NULL,
   `fecha` date NOT NULL,
   `datos_match` TINYINT(1) NOT NULL,
-  FOREIGN KEY(`datos_match`) REFERENCES match(`amistad`, `cruza`, `adopcion`)
+  FOREIGN KEY(`datos_match`) REFERENCES matchs(`amistad`, `cruza`, `adopcion`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `bloquear`(
