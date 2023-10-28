@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `usuario`
 --
+--GRANT ALL PRIVILIEGES ON dogeway.* TO 'root'@'localhost' IDENTIFIED BY 'root';--Comando para otorgar todos los permisos a un usuario
+--Desde consola
 
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
@@ -85,7 +87,7 @@ CREATE TABLE `mascota`(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `match`(
-  TINYINT(1) DEFAULT 0,
+  `amistad` TINYINT(1) DEFAULT 0,
   `cruza` TINYINT(1) DEFAULT 0,
   `adopcion` TINYINT(1) DEFAULT 0
 );
