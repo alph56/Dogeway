@@ -4,22 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    <link rel="stylesheet" href="main.css">
+    <title>INICIO</title>
+    <link rel="stylesheet" href="http://localhost/Dogeway/CSS/index.css">
 </head>
 <body>
-    <div id="menu">
-        <ul>
-            <li>Home</li>
-            <li class="cerrar-sesion">
-                <a href="http://localhost/Dogeway/Inicio/includes/logout.php">Cerrar sesión</a>
-            </li>
-        </ul>
-    </div>
 
-    <section>
+    <header>
+
+        <nav class="nav">
+            <div class=ranalogo>
+                <img class="rana" src="http://localhost/Dogeway/Imagenes/Rana_blanco.png">
+            <div class="logo"> DOGEWAY</div> </div>
+            <ul class="menu">
+                <li><a>PERFIL</a><br>
+                <li><a>ADOPCION</a><br>
+                <li><a href="http://localhost/Dogeway/Inicio/includes/logout.php">CERRAR SESION</a></li>
+            </ul>
+        </nav>
+
+        <section>
         <h1>Bienvenido <?php echo $user->getNombre(); ?> </h1>
-    </section>
+        </section>
+
+    </header>
+
+    
     
 </body>
 </html>

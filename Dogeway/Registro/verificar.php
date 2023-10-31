@@ -27,7 +27,7 @@ if (isset($_GET['email']) && isset($_GET['codigo'])) {
     
         if ($stmt->execute()) {
 
-                echo "Su cuenta ha sido verificada con éxito. Ahora puede iniciar sesión."; 
+            header('Location: mensajes/mensaje_exito.php');
 
         } else {
         
@@ -36,14 +36,14 @@ if (isset($_GET['email']) && isset($_GET['codigo'])) {
         }
     } else {
     
-        echo "La verificacion ha fallado, verifique su link";
+        header('Location: mensajes/mensaje_fallido.php');
 
     }
 
     $stmt->close();
 } else {
   
-    echo "Su cuenta ha sido verificada con éxito. Ahora puede iniciar sesión.";
+    header('Location: mensajes/mensaje_exito.php');
   
 }
 

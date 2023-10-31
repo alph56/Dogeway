@@ -108,10 +108,13 @@ if (isset($_POST['registrar'])) {
 
                     $recipient = $email; 
                     $subject = 'Verificar su cuenta de DogeWay';
-                    $message = "Hola $nombre $apellidos.\n\n";
-                    $message .= "Por favor, haga clic en el siguiente enlace para verificar su correo electrónico:\n";
-                    $message .= "http://localhost/dogeway/Registro/verificar.php?email=$email&codigo=$codigo_verificacion";
-                    $message .= "\n(❁´◡❁)(❁´◡❁)(❁´◡`❁)";
+                    $message = "Hola, $nombre $apellidos.\n\n";
+                    $message .= "¡Gracias por registrarte en Dogeway!\n\n";
+                    $message .= "Dale click al siguiente enlace para verificar tu cuenta:\n";
+                    $message .= "  ∧,,,∧\n";
+                    $message .= "(  ̳• · • ̳)\n";
+                    $message .= "/    づ♡ http://localhost/dogeway/Registro/verificar.php?email=$email&codigo=$codigo_verificacion";
+         
 
                     $mail = new PHPMailer();
 

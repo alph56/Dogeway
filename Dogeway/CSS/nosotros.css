@@ -102,10 +102,9 @@ header{
 
 h1 {
     font-size: 30px;
-    margin: 20px;
+    margin-left: 345px;
     color: aliceblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
     letter-spacing: 2px;
     text-shadow: black 6px 6px 8px;
 }
@@ -120,16 +119,16 @@ h2 {
 }
 
 .info {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.5;
     color: aliceblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    margin-left: 150px;
-    margin-right: 150px;
+    text-align: justify;
     letter-spacing: 5px;
     font-display: auto;
     text-shadow: black 6px 6px 8px;
+    margin: 10px;
+    padding: 10px;
 }
 
   p.centrado {
@@ -154,3 +153,8 @@ h2 {
     font-size: 13px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
+
+  .muchotexto {
+    display: flex;
+    justify-content: space-between;
+}
