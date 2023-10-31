@@ -1,0 +1,52 @@
+
+body{
+    background-image: url(http://localhost/Dogeway/Imagenes/correo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.mensaje {
+    background-color:  #009d71;
+    border-radius: 10px;
+    width: 60%;
+    height: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+}
+
+.texto {
+    font-size: 23px;
+    line-height: 1.5;
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+    font-display: auto;
+    text-shadow: #789dca 5px 5px 5px;
+}
+
+.boton {
+    background-color:#789dca;
+    color: aliceblue;
+    padding: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 270%);
+}
+
+.boton:hover {
+    background-color:aliceblue;
+    color: #789dca;
+    border-radius: 15px;
+    transition: 1s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

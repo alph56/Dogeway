@@ -155,25 +155,25 @@ if (isset($_POST['registrar'])) {
                             // $ine, $fotografia Ingresar estos datos al stmt despues.
                             
                             if ($stmt->execute()) {
-                        
-                                echo "Se ha enviado un correo de verificación a su dirección de correo electrónico. Por favor, verifíquelo para completar el registro.";
+
+                                header('Location: mensajes/mensaje_verificacion.php');
                         
                             } else {
-                                //Este no mostrar, solo raro caso de error puede pasar para verificar la insercion
-                                echo "Error al insertar el usuario en la base de datos";
+                    
+                                header('Location: mensajes/mensaje_error.php');
                             }
                             
                             $stmt->close();
                             $conn->close();
                         } else {
 
-                            echo'Error al enviar el correo: ' . $mail->ErrorInfo; 
+                            echo "Error al enviar el correo:" . $mail->ErrorInfo;
+                            
                            
                         }
                         
                     } catch (Exception $e) {
-                        echo 'Error al enviar el correo: ' . $e->getMessage(); 
-
+                        echo  "Error al enviar el correo:" . $e->getMessage(); 
                     }
                 }else{ $errorRegistro ="El INE ingresado ya esta en uso";}
             }else{ $errorRegistro ="El CURP ingresado ya esta en uso";}

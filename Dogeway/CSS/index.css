@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background-image: url(http://localhost/Dogeway/Imagenes/fondo_texto.jpg);
+    background-size: cover;
+    background-position: center;  
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+}
+
+.nav {
+    width: 100%;
+    background: #009d71;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    transition: all 1s ease;
+}
+
+.rana{
+    height: 60px;
+    width: 60px;
+}
+
+.ranalogo{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    font-size: 40px;
+    color:aliceblue;
+    font-weight: 100;
+    font-weight: bold;
+    padding-left: 15px;
+
+}
+.menu {
+    display: flex;
+}
+
+.menu li {
+    list-style: none;
+    margin: 10px;
+    color:aliceblue;
+    font-weight: bold;
+}
+
+.menu li a{
+    color:aliceblue;
+    text-decoration: none;
+    transition: all;
+    font-size: 18px;
+    padding: 20px;
+    font-family: Arial;
+}
+
+.menu li a:hover {
+    padding: 10px 20px;
+    background: #789dca;
+    color: black;
+    border-radius: 15px;
+    transition: 1s;
+}
+
+.submenu{
+    display: none;
+}
+
+.submenu li a{
+    color:aliceblue;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 15px;
+    font-family: Arial;
+}
+
+.menu li:hover .submenu{
+    display: block;
+    position: absolute;
+    background-color: #009d71;
+    margin-top: 15px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+
+h1 {
+    font-size: 30px;
+    margin: 20px;
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: black 6px 6px 8px;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 20px;
+    color: rgb(255, 77, 136);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    text-shadow: black 6px 6px 8px;
+}
+
+.info {
+    font-size: 23px;
+    line-height: 1.5;
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
+    letter-spacing: 5px;
+    font-display: auto;
+    text-shadow: black 6px 6px 8px;
+}
+
+  p.centrado {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .intro {
+    animation-name: fade;
+    animation-duration: 5s;
+  }
+
+  @keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .texto {
+    color: aliceblue;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }

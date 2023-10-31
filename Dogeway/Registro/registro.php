@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="CSS/style.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/register.css" rel="stylesheet" type="text/css" />
     <title>Registro de Cuenta</title>
 
     <script>

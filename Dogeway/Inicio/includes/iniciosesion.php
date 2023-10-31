@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="CSS/CSS.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/Iniciosesion.css" rel="stylesheet" type="text/css" />
     <title>Inicio de sesión</title>
 </head>
 <body>
