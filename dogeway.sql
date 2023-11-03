@@ -39,7 +39,10 @@ CREATE TABLE `mascota` (
   `especificaciones` varchar(256) NOT NULL,
   `caracteristicas` varchar(256) NOT NULL,
   `fotografiaMascota` varchar(128) NOT NULL,
-  `estatus` tinyint(1) NOT NULL
+  `estatus` tinyint(1) NOT NULL,
+  `id_dueno` int(11) NOT NULL,
+  foreign kEY(`nicknameUsuario`) references usuario(`nickname`),
+  foreign KEY(`id_dueno`) REFERENCES usuario(`id`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
