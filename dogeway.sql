@@ -112,3 +112,27 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE `matchs`(
+  `amistad` TINYINT(1) DEFAULT 0,
+  `cruza` TINYINT(1) DEFAULT 0,
+  `adopcion` TINYINT(1) DEFAULT 0
+);
+
+CREATE TABLE `chat`(
+  `nickname_persona1` varchar(30) NOT NULL,
+  `nickname_persona2` varchar(30) NOT NULL,
+  `mensaje` varchar(255) NOT NULL,
+  `fecha` date NOT NULL,
+  `datos_match` TINYINT(1) NOT NULL,
+  FOREIGN KEY(`datos_match`) REFERENCES matchs(`amistad`, `cruza`, `adopcion`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `bloquear`(
+  `id_bloquear` int(11) NOT NULL,
+  `id_bloqueado` int(11) NOT NULL,
+  `fecha_bloqueo` date NOT NULL,
+  `razon` text NOT NULL,
+  FOREIGN KEY(`id_bloquear`) REFERENCES usuario(`id`),
+  FOREIGN KEY(`id_bloqueado`) REFERENCES usuario(`id`),
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
