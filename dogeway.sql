@@ -73,18 +73,21 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-CREATE TABLE `mascota`(
-  `caract_fisicas` varchar(255) NOT NULL,
-  `nickname_dueno` varchar(30) NOT NULL,
-  `nombre_mascota` varchar(30) NOT NULL,
-  `status_salud` varchar(150) NOT NULL,
-  `edad` int(3) NOT NULL,
-  `raza` varchar(50) NOT NULL,
+CREATE TABLE `mascota` (
+  `id` int(11) NOT NULL,
+  `nombreMascota` varchar(32) NOT NULL,
+  `nicknameUsuario` varchar(32) NOT NULL,
+  `descripcion` varchar(128) NOT NULL,
+  `raza` varchar(40) NOT NULL,
+  `edad` int(11) NOT NULL,
+  `cartilla` varchar(128) NOT NULL,
+  `especificaciones` varchar(256) NOT NULL,
+  `fotografiaMascota` varchar(128) NOT NULL,
+  `estatus` tinyint(1) NOT NULL,
   `id_dueno` int(11) NOT NULL,
-  `fotografia_masc` text NOT NULL,
-  foreign kEY(`nickname_dueno`) references usuario(`nickname`),
+  foreign kEY(`nicknameUsuario`) references usuario(`nickname`),
   foreign KEY(`id_dueno`) REFERENCES usuario(`id`) 
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `matchs`(
   `amistad` TINYINT(1) DEFAULT 0,
@@ -106,6 +109,8 @@ CREATE TABLE `bloquear`(
   `id_bloqueado` int(11) NOT NULL,
   `fecha_bloqueo` date NOT NULL,
   `razon` varchar(255) NOT NULL,
+  `ban` TINYINT(1) NOT null default 0,
+  FOREIGN KEY(`ban`) REFERENCES usuario(`verificado`),
   FOREIGN KEY(`id_bloquear`) REFERENCES usuario(`id`),
   FOREIGN KEY(`id_bloqueado`) REFERENCES usuario(`id`),
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
