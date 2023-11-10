@@ -14,16 +14,14 @@
                 <img class="rana" src="http://localhost/Dogeway/Imagenes/Rana_blanco.png">
             <div class="logo"> DOGEWAY</div> </div>
             <ul class="menu">
-                <li><a>PERFIL</a><br>
-                <li><a>ADOPCION</a><br>
-              <li><a>Perfil</a><br>
+              <li><a>PERFIL</a><br>
                   <ul class="submenu">
                       <li><a>Ver Perfiles</a></li>
                       <li><a>Registro de Mascotas</a></li>
                       <li><a>Editar Perfil</a></li>
                   </ul>
               </li>
-              <li><a>Adopción</a><br>
+              <li><a>ADOPCION</a><br>
                   <ul class="submenu">
                       <li><a>Ver Perfiles</a></li>
                       <li><a>Registro de Adopción</a></li>
