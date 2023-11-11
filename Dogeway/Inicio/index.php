@@ -14,7 +14,8 @@ if(isset($_SESSION['user'])){
     //echo "Validación de login";
 
     $userForm = $_POST['username'];
-    $passForm = $_POST['password'];
+    $password = $_POST['password'];
+    $passForm = md5($password);
 
     if ($user->userExists($userForm, $passForm) === true) {
         // Usuario válido y verificado

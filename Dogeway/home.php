@@ -4,7 +4,7 @@
 
 <head>
     <title>DOGEWAY</title>
-    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="http://localhost/Dogeway/CSS/index.css">
 </head>
 
 <body>

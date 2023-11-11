@@ -33,11 +33,20 @@ class User extends DB{
         foreach ($query as $currentUser) {
             $this->nombre = $currentUser['nombre'];
             $this->username = $currentUser['nickname'];
+            $this->userId = $currentUser['id'];
         }
     }
 
     public function getNombre(){
         return $this->nombre;
+    }
+
+    public function getusername(){
+        return $this->username;
+    }
+
+    public function getuserId(){
+        return $this->userId;
     }
 }
 

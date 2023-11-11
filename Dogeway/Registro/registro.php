@@ -1,8 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="../CSS/register.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/registro.css" rel="stylesheet" type="text/css" />
     <title>Registro de Cuenta</title>
+
+    <script>
+
+function handleFileChange() {
+            const fileInput = document.getElementById('archivo');
+            const selectedImage = document.getElementById('selected-image');
+
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+
+                // Mostrar la imagen seleccionada
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    selectedImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+                selectedImage.style.display = 'block';
+            } else {
+                selectedImage.style.display = 'none';
+                selectedImage.src = '';
+            }
+        }
+    </script>
 
 
     <script>
@@ -58,12 +81,19 @@
             <input type="text" id="telefono" name="telefono" required placeholder="Introduce tu telefono"><br><br>
             <input type="text" id="curp" name="curp" required placeholder="Introduce tu curp"><br><br>
             <input type="text" id="ine" name="ine" required placeholder="Introduce tu INE"><br><br>
-            <label>Fecha de nacimiento:</label>
-            <input type="date" name="fechanac" required><br><br>
+            <label>Fecha de nacimiento:
+            <input type="date" name="fechanac" required>
+            </label>
+
+            <label class="custom-file-upload">
+                <span class="file-upload-text" id="file-text">Subir Foto</span>
+                <input type="file" id ="archivo" name="archivo" accept=".jpg, .jpeg, .png" required onchange="handleFileChange()"/>
+                <img id="selected-image" class="selected-image" style="display: none;" alt="Imagen seleccionada">
+            </label><br>
             
         </div>
 
-            <input type="file" id ="archivo" name="archivo" accept=".jpg, .jpeg, .png" required ><br><br>
+            
 
         <input type="submit" name="registrar" value="Registrar">
     </form>

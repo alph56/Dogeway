@@ -103,6 +103,7 @@ if (isset($_POST['registrar'])) {
                                 $apellidos = $_POST['apellidos'];
                                 $email = $_POST['email'];
                                 $pass = $_POST['pass'];
+                                $passEnc = md5($pass);
                                 $curp = $_POST['curp'];
                                 $nickname = $_POST['nickname'];
                                 $fechanac = $_POST['fechanac'];
@@ -180,7 +181,7 @@ if (isset($_POST['registrar'])) {
                                         $insertQuery = "INSERT INTO usuario (nombre, email, codigo_verificacion, verificado, pass,
                                         curp, nickname, apellidos, fechanac, telefono, municipio, ine, fotografia, archivo_n) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
                                         $stmt = $conn->prepare($insertQuery);
-                                        $stmt->bind_param("sssissssssssss", $nombre, $email, $codigo_verificacion, $verificado, $pass, 
+                                        $stmt->bind_param("sssissssssssss", $nombre, $email, $codigo_verificacion, $verificado, $passEnc, 
                                         $curp, $nickname, $apellidos, $fechanac, $telefono, $municipio, $ine, $fotografia, $archivo_n);
 
                                         
