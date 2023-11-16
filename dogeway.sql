@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 28, 2023 at 09:39 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 11-11-2023 a las 03:32:18
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,35 +18,35 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dogeway`
+-- Base de datos: `dogeway`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mascota`
+-- Estructura de tabla para la tabla `mascota`
 --
 
 CREATE TABLE `mascota` (
   `id` int(11) NOT NULL,
   `nombreMascota` varchar(32) NOT NULL,
-  `nicknameUsuario` varchar(32) NOT NULL,
   `descripcion` varchar(128) NOT NULL,
+  `especie` varchar(32) NOT NULL,
   `raza` varchar(40) NOT NULL,
   `edad` int(11) NOT NULL,
   `cartilla` varchar(128) NOT NULL,
   `especificaciones` varchar(256) NOT NULL,
+  `caracteristicas` varchar(256) NOT NULL,
   `fotografiaMascota` varchar(128) NOT NULL,
-  `estatus` tinyint(1) NOT NULL,
-  `id_dueno` int(11) NOT NULL,
-  foreign kEY(`nicknameUsuario`) references usuario(`nickname`),
-  foreign KEY(`id_dueno`) REFERENCES usuario(`id`) 
+  `archivo_m` varchar(128) NOT NULL,
+  `estatus` tinyint(1) NOT NULL DEFAULT 1,
+  `situacion` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -62,77 +62,63 @@ CREATE TABLE `usuario` (
   `apellidos` varchar(50) NOT NULL,
   `municipio` varchar(50) NOT NULL,
   `fechanac` date NOT NULL,
-  `fotografia` text NOT NULL,
-  `ine` text NOT NULL
+  `fotografia` varchar(128) NOT NULL,
+  `archivo_n` varchar(128) NOT NULL,
+  `ine` text NOT NULL,
+  `admin` int(2) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nombre`, `email`, `codigo_verificacion`, `verificado`, `pass`, `curp`, `telefono`, `nickname`, `apellidos`, `municipio`, `fechanac`, `fotografia`, `ine`) VALUES
-(27, 'Daniel Antonio', 'dangatovolador@gmail.com', 'f95ae455e52ed86f571427d89b1c566d', 1, '123', '543543', '+528715243308', 'tumama', 'Juarez Silva', '432423423', '2003-02-12', '', 'ineunico'),
-(28, 'Samantha', 'moonly.uwu15@gmail.com', 'e8366e7cdefb1dfc0b1144f41de0c7cb', 1, '1235', 'ASDFGHJKL', '1234567890', 'samnette', 'Telles', 'Guadalajara', '2003-10-23', '', 'QWERTYUIOP');
+INSERT INTO `usuario` (`id`, `nombre`, `email`, `codigo_verificacion`, `verificado`, `pass`, `curp`, `telefono`, `nickname`, `apellidos`, `municipio`, `fechanac`, `fotografia`, `archivo_n`, `ine`, `admin`) VALUES
+(50, 'Daniel Antonio', 'esequien333@gmail.com', '6e5400def35b38c2a91f18dab7b0e7e9', 1, '202cb962ac59075b964b07152d234b70', 'JUSD030212HCLRLNA4', '8715243308', 'DanCatFly', 'Juarez Silva', 'Guadalajara', '2003-02-12', 'f5931efe62aee7519a49676cb36ece32.jpg', 'communityIcon_y44umx9mwy041.jpg', 'JRSLDN03021205H600', 0),
+(51, 'Laura Samantha', 'androlausam2@gmail.com', '9f77720ef7b5122aabf45b49dd1266c6', 1, '0cdfb256110772e88c21ddf94ee6f1ba', 'TEGL031023MJCLRRA1', '3310766433', 'samnette', 'Telles Gordillo', 'Guadalajara', '2003-10-23', 'd06f547c157893df34569aa4ca374099.jpg', 'miyamurita.jpg', 'LSEGNM03021205M700', 0);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `mascota`
+-- Indices de la tabla `mascota`
 --
 ALTER TABLE `mascota`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuario`
+-- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `mascota`
+-- AUTO_INCREMENT de la tabla `mascota`
 --
 ALTER TABLE `mascota`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `mascota`
+--
+ALTER TABLE `mascota`
+  ADD CONSTRAINT `mascota_ibfk_1` FOREIGN KEY (`id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-CREATE TABLE `matchs`(
-  `amistad` TINYINT(1) DEFAULT 0,
-  `cruza` TINYINT(1) DEFAULT 0,
-  `adopcion` TINYINT(1) DEFAULT 0
-);
-
-CREATE TABLE `chat`(
-  `nickname_persona1` varchar(30) NOT NULL,
-  `nickname_persona2` varchar(30) NOT NULL,
-  `mensaje` varchar(255) NOT NULL,
-  `fecha` date NOT NULL,
-  `datos_match` TINYINT(1) NOT NULL,
-  FOREIGN KEY(`datos_match`) REFERENCES matchs(`amistad`, `cruza`, `adopcion`)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-CREATE TABLE `bloquear`(
-  `id_bloquear` int(11) NOT NULL,
-  `id_bloqueado` int(11) NOT NULL,
-  `fecha_bloqueo` date NOT NULL,
-  `razon` text NOT NULL,
-  `ban` TINYINT(1) NOT null default 0,
-  FOREIGN KEY(`ban`) REFERENCES usuario(`verificado`),
-  FOREIGN KEY(`id_bloquear`) REFERENCES usuario(`id`),
-  FOREIGN KEY(`id_bloqueado`) REFERENCES usuario(`id`),
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
