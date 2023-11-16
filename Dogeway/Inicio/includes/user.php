@@ -15,6 +15,7 @@ class User extends DB{
             $userData = $query->fetch(PDO::FETCH_ASSOC);
             if ($userData['verificado'] == 1) {
                 // El usuario está verificado
+                $this->updateUserStatus($userData['id'], 'Disponible');
                 return true;
             } else {
                 // El usuario no está verificado
@@ -24,6 +25,18 @@ class User extends DB{
             // El usuario no existe
             return false;
         }
+    }
+
+    private function updateUserStatus($userId, $status) {
+        $query = $this->connect()->prepare('UPDATE usuario SET status = :status WHERE id = :id');
+        $query->execute(['status' => $status, 'id' => $userId]);
+        
+    }
+
+    public function statusUserStatus($userId, $status) {
+        $query = $this->connect()->prepare('UPDATE usuario SET status = :status WHERE id = :id');
+        $query->execute(['status' => $status, 'id' => $userId]);
+       
     }
 
     public function setUser($user){
