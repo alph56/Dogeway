@@ -24,7 +24,7 @@
               <li><a>ADOPCION</a><br>
                   <ul class="submenu">
                       <li><a>Ver Perfiles</a></li>
-                      <li><a>Registro de Adopción</a></li>
+                      <li><a href="http://localhost/Dogeway/RegistroMascota/registro.php">Registro de Adopción</a></li>
                       <li><a>Editar Perfil de Adopción</a></li>
                   </ul>
               </li>
