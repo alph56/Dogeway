@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../CSS/registroMascota.css" rel="stylesheet" type="text/css" />
+        <link href="../CSS/registroMascot.css" rel="stylesheet" type="text/css" />
         <title>Registro de Mascota</title>
 
         <script>
@@ -60,15 +60,6 @@
         }
     </script>
 
-        <script>
-            function mostrarError(mensaje) {
-                var errorElement = document.getElementById('error-message');
-                if (errorElement) {
-                    errorElement.textContent = mensaje;
-                    errorElement.style.display = 'block';
-                }
-            }
-        </script>
     </head>
     <body>
 
@@ -85,34 +76,27 @@
     <div class="registromascota"> 
         <h2 class="titulomasc">REGISTRA A TU MASCOTA</h2>
         
-        <div id="error-message" style="color: red; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 12px; margin-bottom: 17px;"></div>
-        <?php
-            if (isset($_GET['error'])) {
-                $errorRegistro = urldecode($_GET['error']);
-                echo '<script>';
-                echo 'mostrarError("' . $errorRegistro . '");';
-                echo '</script>';
-            }
-        ?>
-
-        <form action="" method="post" enctype= "multipart/form-data">
+        <div id="mensaje"></div>
+        
+        <form action="altaregistro.php" method="post" enctype= "multipart/form-data">
             <div class="columna">
 
+                <input type="hidden" name="id_usuario" id="id_usuario" value="<?php echo $user->getuserId(); ?>">
                 <input type="text" id="nombreMascota" name="nombreMascota" required placeholder="Nombre de tu mascota"><br><br>
-                <input type="number" name="edad" required placeholder="Ingresa su edad"><br><br>
+                <input type="number" name="edad" required placeholder="Edad (En años)"><br><br>
                 <input type="text" id="descripcion" name="descripcion" required placeholder="Agrega una descripción"><br><br>
-                <input type="text" id="especie" name="especie" required placeholder="Ingresa la especie"><br><br>
                 <input type="text" id="raza" name="raza" required placeholder="Ingresa la raza"><br><br>
-                <input type="text" id="especificaciones" name="especificaciones" required placeholder="Ingresa las especificaciones"><br><br>
-                <input type="text" id="caracteristicas" name="caracteristicas" required placeholder="Ingresa las caraterísticas"><br><br>
+                <input type="text" id="especificaciones" name="especificaciones" required placeholder="Especificaciones (Sano,sordo...)"><br><br>
+                <input type="text" id="caracteristicas" name="caracteristicas" required placeholder="Caraterísticas (Color,Tamaño...)"><br><br>
                 <label class="categoria">
                 <select name="especie">
                     <option value="0">Selecciona su especie</option>
                     <option value="1">Perros</option>
                     <option value="2">Gatos</option>
-                    <option value="2">Aves</option>
-                    <option value="2">Reptiles</option>
-                    <option value="2">Acuaticos</option>
+                    <option value="3">Aves</option>
+                    <option value="4">Reptiles</option>
+                    <option value="5">Acuaticos</option>
+                    <option value="6">Roedores</option>
                 </select></label>
             </div>
 
@@ -146,7 +130,7 @@
     </div>
 
 <?php 
-//ESTE BLOQUE ES EL ULTIMO AL FINAL DE CADA PEDAZO DE HTML
+
 } else {header("Location: ../Inicio/index.php");
   exit();
 } 
