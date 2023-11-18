@@ -1,16 +1,16 @@
 <?php
 
-include_once 'db.php';
-
-class User extends DB{
-
+class User extends DB
+{
     private $nombre;
     private $username;
+    private $userId;
 
-    public function userExists($user, $pass) {
+    public function userExists($user, $pass)
+    {
         $query = $this->connect()->prepare('SELECT * FROM usuario WHERE nickname = :user AND pass = :pass');
         $query->execute(['user' => $user, 'pass' => $pass]);
-    
+
         if ($query->rowCount()) {
             $userData = $query->fetch(PDO::FETCH_ASSOC);
             if ($userData['verificado'] == 1) {
@@ -26,7 +26,8 @@ class User extends DB{
         }
     }
 
-    public function setUser($user){
+    public function setUser($user)
+    {
         $query = $this->connect()->prepare('SELECT * FROM usuario WHERE nickname = :user');
         $query->execute(['user' => $user]);
 
@@ -37,17 +38,19 @@ class User extends DB{
         }
     }
 
-    public function getNombre(){
+    public function getNombre()
+    {
         return $this->nombre;
     }
 
-    public function getusername(){
+    public function getusername()
+    {
         return $this->username;
     }
 
-    public function getuserId(){
+    public function getuserId()
+    {
         return $this->userId;
     }
 }
-
 ?>

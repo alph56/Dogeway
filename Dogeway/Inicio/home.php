@@ -16,16 +16,17 @@
             <ul class="menu">
               <li><a>PERFIL</a><br>
                   <ul class="submenu">
-                      <li><a>Ver Perfiles</a></li>
+                      <li><a href="http://localhost/Dogeway/Match/perfiles.php">Ver Perfiles</a></li>
                       <li> <a href="http://localhost/Dogeway/RegistroMascota/registro.php">Registro de Mascotas</a></li>
                       <li><a>Editar Perfil</a></li>
                   </ul>
               </li>
               <li><a>ADOPCION</a><br>
                   <ul class="submenu">
-                      <li><a>Ver Perfiles</a></li>
-                      <li><a href="http://localhost/Dogeway/RegistroMascota/registro.php">Registro de Adopción</a></li>
+                      <li><a href ="http://localhost/Dogeway/Match/adopcion.php">Ver Perfiles</a></li>
+                      <li><a>Registro de Adopción</a></li>
                       <li><a>Editar Perfil de Adopción</a></li>
+                      <li><a href ="http://localhost/Dogeway/Mensajes/chat.php">Chat</a></li>
                   </ul>
               </li>
                 <li><a href="http://localhost/Dogeway/Inicio/includes/logout.php">CERRAR SESION</a></li>
