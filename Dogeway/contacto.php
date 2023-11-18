@@ -3,8 +3,8 @@
 <html>
 
 <head>
-    <title>DOGEWAY - VISION</title>
-    <link rel="stylesheet" href="CSS/home.css">
+    <title>DOGEWAY - CONTACTO</title>
+    <link rel="stylesheet" href="CSS/nosotros.css">
 </head>
 
 <body>
@@ -32,20 +32,27 @@
                 </li>
             </ul>
         </nav>
-                <div class="intro">
+        <div class="intro">
                     <p class="centrado">
         
                     </p>
                         <h1>CONTACTO</h1><br>
-                    
-                        <div class="info">
 
-                            <p>
-                               
-                            </p>
-                            
+                    <div class= muchotexto>
+                        <div class="info">
+                            <p>✧ Dirección: Centro Universitario de Ingenierias y Ciencias Exactas</p><br>
+                            <p>✧ Teléfono: 3310766434</p><br>
+                            <p>✧ Correo Electrónico: dogewaycompany@gmail.com</p><br>
+                            <p>✧ Horario de Atención: </p><br>
+                            <p> Lunes a Viernes: 1:00 PM - 6:00 PM <br>
+                             Sábados: 1:00 PM - 5:00 PM <br>
+                             Domingos: Cerrado   
+                            </p><br>
                         </div>
-                    
+
+                        <div class="info">    
+                            <img src="Imagenes/rana_blanco.png" width="490 px">
+                        </div>
                     </div>
             
                 </div> 
