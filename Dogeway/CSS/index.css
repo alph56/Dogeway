@@ -87,14 +87,16 @@ header{
     text-decoration: none;
     font-size: 12px;
     padding: 15px;
+    margin: 10px;
     font-family: Arial;
 }
 
 .menu li:hover .submenu{
     display: block;
     position: absolute;
-    background-color: #05684c;
+    background-color: #009d71;
     margin-top: 15px;
+    margin-bottom: 5px;
     border-radius: 10px;
     transition: 1s;
 }

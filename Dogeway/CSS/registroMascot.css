@@ -1,0 +1,167 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    background-image: url(http://localhost/Dogeway/Imagenes/fondo_texto.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  header{
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .nav {
+    width: 100%;
+    background: #009d71;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    transition: all 1s ease;
+  }
+  
+  .ranalogo{
+  display: flex;
+  align-items: center;
+  }
+  
+  .logo{
+    font-size: 40px;
+    color:aliceblue;
+    font-weight: 100;
+    font-weight: bold;
+    padding-left: 15px;
+  
+  }
+  
+  .menu {
+    display: flex;
+    
+  }
+  
+  .menu li {
+    list-style: none;
+    margin: 10px;
+    color:aliceblue;
+    font-weight: bold;
+  }
+  
+  .menu li a{
+    color:aliceblue;
+    text-decoration: none;
+    transition: all;
+    font-size: 18px;
+    padding: 40px;
+    font-family: Arial;
+  }
+  
+  .menu li a:hover {
+    padding: 15px 20px;
+    background: #789dca;
+    color: black;
+    border-radius: 15px;
+    transition: 1s;
+  }
+  
+  
+  .rana{
+    height: 60px;
+    width: 60px;
+  }
+  
+  .registromascota {
+    color: black;
+    background: aliceblue;
+    text-align: center;
+    width: 45%;
+    margin: 35px auto; 
+    padding: 75px; 
+    border-radius: 15px;
+    font-weight: bold;
+  }
+  
+  .columna {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+  }
+  
+  .titulomasc {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .registromascota label {
+    display: block;
+    margin-bottom: 50px; 
+  }
+  
+  .registromascota input[type = "text"],
+  .registromascota input[type = "number"] {
+    width: 90%; 
+    padding: 5px; 
+    margin-bottom: 10px; 
+  }
+  
+  .categoria {
+    width: 80%; 
+    padding: 5px; 
+    margin-bottom: 10px; 
+    margin-left: 25px;
+  }
+  
+  
+  .registromascota input[type="file"] {
+    display: none;
+  }
+  
+  .custom-file-upload {
+    margin-left: 25px;
+    margin-top: 35px;
+    border: 1px solid #747171;
+    font-size: 13px;
+    width: 80%; 
+    height: 28px;
+    padding: 5px; 
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    top: -35px;
+  }
+  
+  .selected-image {
+    max-width:  95px;
+    max-height: 95px; 
+    margin-top: 10px;
+    margin-left: 42px;
+  }
+
+  .select-image {
+    max-width:  95px;
+    max-height: 95px; 
+    margin-top: 10px;
+    margin-left: 42px;
+  }
+  
+  .registromascota input[type="submit"] {
+    background-color: #2ca880; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 10px;
+    align-items: center;
+   
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
