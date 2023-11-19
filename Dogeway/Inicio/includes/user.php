@@ -45,7 +45,10 @@ class User extends DB{
 
         foreach ($query as $currentUser) {
             $this->nombre = $currentUser['nombre'];
+            $this->apellidos= $currentUser['apellidos'];
             $this->username = $currentUser['nickname'];
+            $this->fotografia = $currentUser['fotografia'];
+            $this->UniqueId = $currentUser['unique_id'];
             $this->userId = $currentUser['id'];
         }
     }
@@ -54,12 +57,24 @@ class User extends DB{
         return $this->nombre;
     }
 
+    public function getApellidos(){
+        return $this->apellidos;
+    }
+
     public function getusername(){
         return $this->username;
     }
 
     public function getuserId(){
         return $this->userId;
+    }
+
+    public function getUniqueId(){
+        return $this->UniqueId;
+    }
+
+    public function getFotografia(){
+        return $this->fotografia;
     }
 }
 

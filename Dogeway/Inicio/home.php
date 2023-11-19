@@ -1,16 +1,3 @@
-<?php 
-    //INCLUIR TODO ESTE BLOQUE DE PHP EN CADA archivo con HTML
-    include_once '../Inicio/includes/user.php';
-    include_once '../Inicio/includes/user_session.php';
-    
-    $userSession = new UserSession();
-    $user = new User();
-
-    if(isset($_SESSION['user'])){
-    $user->setUser($userSession->getCurrentUser());
-    //ABAJO TMBN ESTA EL OTRO PEDAZO DEL BLOQUE, PONERLO AL FINAL
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +22,7 @@
 
         function esPrimerDiaDelMes() {
             var fechaActual = new Date();
-            return fechaActual.getDate() === 18; // Cambiado a la fecha 18 para pruebas
+            return fechaActual.getDate() === 19; // Cambiado a la fecha 18 para pruebas
         }
 
         function setCookie(nombre, valor, dias) {
@@ -67,6 +54,7 @@
                 <img class="rana" src="http://localhost/Dogeway/Imagenes/Rana_blanco.png">
             <div class="logo"> DOGEWAY</div> </div>
             <ul class="menu">
+              <li><a href="http://localhost/Dogeway/Chat/users.php">CHAT</a></li>
               <li><a href="http://localhost/Dogeway/Perfil/perfil.php">PERFIL</a></li>
               <li><a href="http://localhost/Dogeway/Adopcion/adopcion.php">ADOPCION</a></li>
               <li><a href="http://localhost/Dogeway/Inicio/includes/logout.php">CERRAR SESION</a></li>
@@ -81,10 +69,3 @@
     
 </body>
 </html>
-
-<?php 
-
-} else {header("Location: ../Inicio/index.php");
-  exit();
-} 
-?>
