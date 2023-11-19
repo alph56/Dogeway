@@ -111,6 +111,8 @@ if (isset($_POST['registrar'])) {
                                 $municipio = $_POST['municipio'];
                                 $ine = $_POST['ine'];
                                 $codigo_verificacion = md5(uniqid(rand(), true));
+                                $ran_id = rand(time(), 100000000);
+                                $unique_id = $ran_id;
 
                                 $file_name = $_FILES['archivo'] ['name'];
 
@@ -179,10 +181,10 @@ if (isset($_POST['registrar'])) {
                                         $verificado = 0;
 
                                         $insertQuery = "INSERT INTO usuario (nombre, email, codigo_verificacion, verificado, pass,
-                                        curp, nickname, apellidos, fechanac, telefono, municipio, ine, fotografia, archivo_n) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
+                                        curp, nickname, apellidos, fechanac, telefono, municipio, ine, fotografia, archivo_n, unique_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
                                         $stmt = $conn->prepare($insertQuery);
-                                        $stmt->bind_param("sssissssssssss", $nombre, $email, $codigo_verificacion, $verificado, $passEnc, 
-                                        $curp, $nickname, $apellidos, $fechanac, $telefono, $municipio, $ine, $fotografia, $archivo_n);
+                                        $stmt->bind_param("sssisssssssssss", $nombre, $email, $codigo_verificacion, $verificado, $passEnc, 
+                                        $curp, $nickname, $apellidos, $fechanac, $telefono, $municipio, $ine, $fotografia, $archivo_n, $unique_id);
 
                                         
                                         if ($stmt->execute()) {
