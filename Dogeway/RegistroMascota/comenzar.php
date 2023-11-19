@@ -28,7 +28,7 @@
 
     <div class="btn-container">
         <a class="boton" href="#">Ir a conocer mascotas</a>
-        <a class="boton" href="http://localhost/Dogeway/Inicio/home.php">Volver a la pagina principal</a>
+        <a class="boton" href="../index.php">Volver a la pagina principal</a>
     </div>
     
     
@@ -37,7 +37,7 @@
 
 <?php 
 
-} else {header("Location: ../Inicio/index.php");
+} else {header("Location: ../index.php");
   exit();
 } 
 ?>
