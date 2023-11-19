@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="info">    
-                            <img src="Imagenes/rana_blanco.png" width="490 px">
+                            <img src="Imagenes/rana_blanco.png" width="450 px">
                         </div>
                     </div>
             
