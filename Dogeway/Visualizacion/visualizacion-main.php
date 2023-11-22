@@ -35,8 +35,8 @@
     <div class="perfil-principal">
         <!-- contenido del perfil principal -->
         <h1>Dueño <a href="perfil-edit.php" id=<?php echo $user->getuserId();?> class="title_edit">Editar</a></h1> 
-        <p>Nombre: <?php echo $user->getNombre();?> <?php echo $user->getuserlastname();?></p>
-        <p>Username: <?php echo $user->getusernickname();?></p>
+        <p>Nombre: <?php echo $user->getNombre();?> <?php echo $user->getApellidos();?></p>
+        <p>Username: <?php echo $user->getusername();?></p>
         <p>Correo: <?php echo $user->getuseremail();?><p>
         <p>Telefono: <?php echo $user->getusertel();?><p>
         <p>Municipio: <?php echo $user->getusermun();?><p>
@@ -45,7 +45,7 @@
             <th>Fotografia</th>
         </tr>
         <tr>
-            <td><img height="50px" src="data:image/<?php echo $user->getuserImage();?>;base64, <?php echo base64_encode($user->getuserImage()); ?>"></td>
+            <td><img height="50px" src="data:image/<?php echo $user->getFotografia();?>;base64, <?php echo base64_encode($user->getuserImage()); ?>"></td>
         </tr>
         </table>
     </div>

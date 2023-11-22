@@ -54,6 +54,9 @@ class User extends DB{
             $this->fotografia = $currentUser['fotografia'];
             $this->UniqueId = $currentUser['unique_id'];
             $this->userId = $currentUser['id'];
+            $this->useremail = $currentUser['email'];
+            $this->usertel = $currentUser['telefono'];
+            $this->usermun = $currentUser['municipio'];
         }
     }
 
@@ -79,6 +82,17 @@ class User extends DB{
 
     public function getFotografia(){
         return $this->fotografia;
+    }
+    public function getuseremail(){
+        return $this->useremail;
+    }
+
+    public function getusertel(){
+        return $this->usertel;
+    }
+
+    public function getusermun(){
+        return $this->usermun;
     }
 }
 
