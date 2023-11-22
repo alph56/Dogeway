@@ -20,27 +20,30 @@ if (isset($_GET['email']) && isset($_GET['codigo'])) {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($result->num_rows === 1) {
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $ver = $row["verificado"];
+    }
+
+    if ($result->num_rows === 1 && $ver === 0) {
         $updateQuery = "UPDATE usuario SET verificado = 1 WHERE email = ?";
         $stmt = $conn->prepare($updateQuery);
         $stmt->bind_param("s", $email);
-    
+        
         if ($stmt->execute()) {
 
             header('Location: mensajes/mensaje_exito.php');
 
         } else {
-        
-             echo "Error al actualizar la cuenta" . $stmt->error;
-        
-        }
-    } else {
-    
-        header('Location: mensajes/mensaje_fallido.php');
-
+            
+            echo "Error al actualizar la cuenta" . $stmt->error;
+            
+        } 
+    } else {        
+    header('Location: mensajes/mensaje_fallido.php');
     }
-
     $stmt->close();
+        
 } else {
   
     header('Location: mensajes/mensaje_exito.php');

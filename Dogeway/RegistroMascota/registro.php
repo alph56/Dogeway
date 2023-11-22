@@ -69,7 +69,19 @@
             <div class="logo"> DOGEWAY</div>
         </div>
         <ul class="menu">
-            <li><a href="../index.php">PAGINA PRINCIPAL</a></li>
+              <li><a href="#">MATCH</a></li>
+              <li><a href="#">ADOPCION</a></li>
+              <li><a>PERFIL</a><br>
+                  <ul class="submenu">
+                      <li><a>Ver Perfil</a></li>
+                      <li> <a href="http://localhost/Dogeway/RegistroMascota/registro.php">Registrar Mascota</a></li>
+                      <li><a href="#">Editar Perfil</a></li>
+                  </ul>
+              </li>
+              <li><a href="http://localhost/Dogeway/Chat/users.php">CHAT</a></li>
+              <li><a href="../index.php">PAGINA PRINCIPAL</a></li>
+              <li><a href="http://localhost/Dogeway/Inicio/includes/logout.php">CERRAR SESION</a></li>
+            </ul>
         </ul>
     </nav>
 

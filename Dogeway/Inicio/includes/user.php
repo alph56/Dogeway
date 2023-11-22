@@ -17,7 +17,11 @@ class User extends DB{
                 // El usuario está verificado
                 $this->updateUserStatus($userData['id'], 'Disponible');
                 return true;
-            } else {
+            } else if($userData['verificado'] == 2) {
+                // El usuario está suspendido
+                $this->updateUserStatus($userData['id'], 'Suspendido');
+                return "sus";
+            }else {
                 // El usuario no está verificado
                 return "nover";
             }

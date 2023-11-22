@@ -27,7 +27,12 @@ if(isset($_SESSION['user'])){
         $errorLogin = "Tu cuenta no está verificada.";
         include_once 'includes/iniciosesion.php';
        
-    } else {
+    }  else if ($user->userExists($userForm, $passForm) === "sus") {
+        // El usuario esta suspendido
+        $errorLogin = "Tu cuenta esta suspendida";
+        include_once 'includes/iniciosesion.php';
+    }
+     else {
         // El usuario no existe o contraseña incorrecta
         $errorLogin = "Nickname y/o contraseña es incorrecto.";
         include_once 'includes/iniciosesion.php';

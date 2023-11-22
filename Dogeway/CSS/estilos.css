@@ -6,14 +6,11 @@
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
 }
-
 body{
-  background-image: url(http://localhost/Dogeway/Imagenes/correo.jpg);;
+  background: #7e7d7c;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-size: cover;
-  background-position: center;
 }
 
 /*Este es para el cuadro de la lista de usuarios*/
@@ -39,12 +36,6 @@ body{
   box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
               0 32px 64px -48px rgba(0,0,0,0.5);
 }
-
-.texto{
-  text-align: center;
-  margin-top: 40%;
-}
-
 /* Aqui empieza el editado de listado de usuarios*/
 .users{
   padding: 25px 30px;
@@ -427,7 +418,7 @@ header{
 .menu li:hover .submenu{
   display: block;
   position: absolute;
-  background-color: #009d71;
+  background-color: #05684c;
   margin-top: 15px;
   border-radius: 10px;
   transition: 1s;

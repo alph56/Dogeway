@@ -15,22 +15,18 @@
                 <img class="rana" src="http://localhost/Dogeway/Imagenes/Rana_blanco.png">
             <div class="logo"> DOGEWAY</div> </div>
             <ul class="menu">
-            <li> <a href="http://localhost/Dogeway/Chat/users.php">CHAT</a></li><br>
+              <li><a href="#">MATCH</a></li>
+              <li><a href="#">ADOPCION</a></li>
               <li><a>PERFIL</a><br>
                   <ul class="submenu">
-                      <li><a>Ver Perfiles</a></li>
-                      <li> <a href="http://localhost/Dogeway/RegistroMascota/registro.php">Registro de Mascotas</a></li>
-                      <li><a>Editar Perfil</a></li>
+                      <li><a>Ver Perfil</a></li>
+                      <li> <a href="http://localhost/Dogeway/RegistroMascota/registro.php">Registrar Mascota</a></li>
+                      <li><a href="#">Editar Perfil</a></li>
                   </ul>
               </li>
-              <li><a>ADOPCION</a><br>
-                  <ul class="submenu">
-                      <li><a>Ver Perfiles</a></li>
-                      <li><a>Registro de Adopción</a></li>
-                      <li><a>Editar Perfil de Adopción</a></li>
-                  </ul>
-              </li>
-                <li><a href="http://localhost/Dogeway/Inicio/includes/logout.php">CERRAR SESION</a></li>
+              <li><a href="http://localhost/Dogeway/Chat/users.php">CHAT</a></li>
+              <li><a href="../index.php">PAGINA PRINCIPAL</a></li>
+              <li><a href="http://localhost/Dogeway/Inicio/includes/logout.php">CERRAR SESION</a></li>
             </ul>
         </nav>
     </header>

@@ -68,6 +68,28 @@
     border-radius: 15px;
     transition: 1s;
   }
+
+  .submenu{
+    display: none;
+}
+
+.submenu li a{
+    color:aliceblue;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 15px;
+    font-family: Arial;
+    margin-top: 10px;
+}
+
+.menu li:hover .submenu{
+    display: block;
+    position: absolute;
+    background-color: #009d71;
+    margin-top: 15px;
+    border-radius: 10px;
+    transition: 1s;
+}
   
   
   .rana{

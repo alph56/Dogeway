@@ -13,7 +13,7 @@
     $outgoing_id = $user->getUniqueId();
     $searchTerm = mysqli_real_escape_string($conn, $_POST['searchTerm']);
 
-    $sql = "SELECT * FROM usuario WHERE NOT unique_id = {$outgoing_id} AND (nombre LIKE '%{$searchTerm}%' OR apellidos LIKE '%{$searchTerm}%') ";
+    $sql = "SELECT * FROM usuario WHERE NOT unique_id = {$outgoing_id} AND verificado = 1 AND (nombre LIKE '%{$searchTerm}%' OR apellidos LIKE '%{$searchTerm}%') ";
     $output = "";
     $query = mysqli_query($conn, $sql);
     if(mysqli_num_rows($query) > 0){

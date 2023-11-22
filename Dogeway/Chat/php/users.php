@@ -12,7 +12,7 @@
     }
 
     $outgoing_id = $user->getUniqueId();
-    $sql = "SELECT * FROM usuario WHERE NOT unique_id = {$outgoing_id} ORDER BY id DESC";
+    $sql = "SELECT * FROM usuario WHERE NOT unique_id = {$outgoing_id} AND verificado = 1  ORDER BY id DESC";
     $query = mysqli_query($conn, $sql);
     $output = "";
     if(mysqli_num_rows($query) == 0){
