@@ -112,6 +112,16 @@ header{
     border: 0px solid;
 }
 
+.textoMascota {
+    
+    color: black;
+
+    letter-spacing: 1px;
+    font-size: 22px;
+    padding: 35px; 
+    font-family: sans-serif;
+}
+
 .boton {
     display: flex;
     width: 80px;
@@ -128,16 +138,6 @@ header{
     height: 50px; 
    
     border: 0px black solid;
-}
-
-.textoMascota {
-    
-    color: black;
-
-    letter-spacing: 3px;
-    font-size: 15px;
-    padding: 35px; 
-    font-family: sans-serif;
 }
 
 .nav {

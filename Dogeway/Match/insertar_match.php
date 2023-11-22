@@ -23,7 +23,5 @@ $stmt->close();
 
 // Enviar notificación al usuario destinatario
 
-$stmt->close();
 
-$conn->close();
 ?>

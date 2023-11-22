@@ -1,12 +1,12 @@
 <?php 
     include_once '../Inicio/includes/user.php';
     include_once '../Inicio/includes/user_session.php';
-    include_once '../Inicio/includes/conexion.php';
+    include_once '../Inicio/conexion.php';
     
     $userSession = new UserSession();
     $user = new User();
 
-    $bool;
+    
 
     if(isset($_SESSION['user'])){
     $user->setUser($userSession->getCurrentUser());
@@ -37,28 +37,27 @@
 
         
     <?php
-        while($consultaUs = mysqli_fetch_array($allUsers)){
-            /*
-                Ciclos y condiciones
-                $band = false; 
+        
+        
 
-                while($consultaMs = mysqli_fetch_array($allMascotas)){
-                    while($consultaUs = mysqli_fetch_array($allUsers) || !band){
-
-                        if(consultaMs['id_dueno'] ==  consutaUs['id'] && 
-                            consultaMs['id_duenoo'] !=  $user->getUserId() &&
-                                consultaMs['status'] == <Que este en adopcion> ){
-                            
-                                $band = true;
-                        }
-                    }
-
-                    if(band){ }Esta llave tambien abajo para condicionar 
-                }Esta llave estara abajo
-             */
+        while($consultaMs = mysqli_fetch_array($allMascotaAdop)){
             
-             if($consultaUs['id'] != $user->getUserId() ){
-            //if
+            $band = 0;
+           
+                while($consultaUs = mysqli_fetch_array($allUsers) ){
+
+                    if($consultaMs['id_usuario'] == $consultaUs['id'] )
+                   {                            
+                        $band = 1;
+                        break;
+                    }         
+                }
+            
+
+            
+             if($band = 1  
+                && $consultaMs['id_usuario'] != $user->getuserId() ){
+            
             
            
     ?>
@@ -68,7 +67,7 @@
            <ul class = "tabla">
                 <ul>
                     <li class = "c1">
-                        <img class = "imgMascota" src="../Registro/archivos/<?php echo $consultaUs['fotografia']?>" class="card-img-top" alt="...">
+                    <img class = "imgMascota" src="../RegistroMascota/archivos/<?php echo $consultaMs['fotografiaMascota']?>" class="card-img-top" alt="...">
                     </li>
 
                     <li class = "c2">
@@ -83,6 +82,7 @@
                                          echo $consultaUs['apellidos'],"<br><br>";
                                          echo $consultaUs['municipio'], "<br>";
                                          echo $consultaUs['fechanac'], "<br>";
+                                         echo $consultaUs['id'], "<br>";
 
                                 ?></p>
                             </div>
@@ -91,6 +91,14 @@
                 </ul>
                 <ul>
                     <li class = "c3">
+                        <div class = "textoMascota">
+                            <p><?php echo $consultaMs['nombreMascota'], "<br><br> ";
+                                     echo $consultaMs['raza'],"<br><br>";
+                                     echo $consultaMs['edad'], " Año(s)<br><br>";
+                                     echo $consultaMs['descripcion'], "<br>";
+                                     echo $consultaMs['id_usuario'], "<br>";
+                            ?></p>
+                        </div>
                         
                     </li>
                     
@@ -108,7 +116,10 @@
 
     <?php
              }
-        }/*Aqui la primera llave para condicionar todas las mascotas */
+             
+             mysqli_data_seek($allUsers, 0);
+        
+            }
     ?>
         
 </body>
