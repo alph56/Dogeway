@@ -25,6 +25,7 @@
                 <li><a href="Registro/registro.php">REGISTRARSE</a></li>
                 <li><a>NOSOTROS</a><br>
                     <ul class="submenu">
+                      <li><a href="http://localhost/Dogeway/Inicio/includes/community-rules.php">Reglas de la comunidad</a></li>
                         <li><a href="mision.php">MISION</a></li>
                         <li><a href="vision.php">VISION</a></li>
                         <li><a href="contacto.php">CONTACTO</a></li>

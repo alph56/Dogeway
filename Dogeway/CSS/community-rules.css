@@ -64,7 +64,6 @@ header{
 .menu li a{
     color:aliceblue;
     text-decoration: none;
-    transition: all;
     font-size: 18px;
     padding: 20px;
     font-family: Arial;
@@ -87,8 +86,9 @@ header{
     text-decoration: none;
     font-size: 12px;
     padding: 15px;
-    font-family: Arial;
+    margin: 10px;
     margin-top: 15px;
+    font-family: Arial;
 }
 
 .menu li:hover .submenu{
@@ -96,6 +96,7 @@ header{
     position: absolute;
     background-color: #009d71;
     margin-top: 15px;
+    margin-bottom: 5px;
     border-radius: 10px;
     transition: 1s;
 }
@@ -103,10 +104,9 @@ header{
 
 h1 {
     font-size: 30px;
-    margin: 20px;
+    margin-left: 345px;
     color: aliceblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
     letter-spacing: 2px;
     text-shadow: black 6px 6px 8px;
 }
@@ -121,52 +121,42 @@ h2 {
 }
 
 .info {
-    font-size: 20px;
+    font-size: 19px;
     line-height: 1.5;
     color: aliceblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    margin-left: 150px;
-    margin-right: 150px;
+    text-align: justify;
     letter-spacing: 5px;
     font-display: auto;
     text-shadow: black 6px 6px 8px;
+    margin: 10px;
+    padding: 10px;
 }
 
-  p.centrado {
-    margin-top: 50px;
-    text-align: center;
-  }
-
-  .intro {
-    animation-name: fade;
-    animation-duration: 5s;
-  }
-
-  @keyframes fade {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  .texto {
-    color: aliceblue;
-    text-align: center;
-    letter-spacing: 3px;
-    font-size: 13px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-.especial{
-    color: rgb(240, 245, 255);
-    text-align: center;
-    font-size: medium;
-    font-style: italic;
-
+p.centrado {
+   margin-top: 50px;
+   text-align: center;
 }
 
-.welcome{
-    height: auto; /* Ajusta la altura según tus necesidades */
-    width: auto; /* Ancho automático para mantener la proporción original */
-    display: block; /* Evita el espacio adicional debajo de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-    position: relative;
+.intro {
+   animation-name: fade;
+   animation-duration: 5s;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.texto {
+   color: aliceblue;
+   text-align: center;
+   letter-spacing: 3px;
+   font-size: 13px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.muchotexto {
+    display: flex;
+    justify-content: space-between;
 }

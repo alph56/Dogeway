@@ -69,6 +69,8 @@
         </nav>
         <section>
         <h1>Bienvenido <?php echo $user->getNombre(); echo $user->getuserId(); echo $user->getusername(); ?> </h1>
+          <h2 class="especial">Revisa las funciones en la barra de arriba</h2>
+          <img class="subtitulo-main welcome" src="http://localhost/Dogeway/Imagenes/doggy_welcome.png">
         </section>
     </header>
     
