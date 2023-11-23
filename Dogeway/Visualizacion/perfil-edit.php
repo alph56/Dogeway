@@ -49,11 +49,11 @@
             <form action="update-edit.php" method="post">
                 <input type="hidden" value="<?php echo $user->getuserId();?>"  name="id"><br><br>
                 <p>Nombre:</p>
-                <input type="text" value="<?php echo $user->getNombre();?>"  name="nombre"><br><br>
+                <input type="text" value=" <?php echo $user->getNombre();?>"  name="nombre"><br><br>
                 <p>Apellidos:</p>
-                <input type="text" value="<?php echo $user->getuserlastname();?>" name="apellidos"><br><br>
+                <input type="text" value="<?php echo $user->getApellidos();?>" name="apellidos"><br><br>
                 <p>Nickname:</p>
-                <input type="text" value="<?php echo $user->getusernickname();?>" name="nickname"><br><br>
+                <input type="text" value="<?php echo $user->getusername();?>" name="nickname"><br><br>
                 <p>Email:</p>
                 <input type="email" value="<?php echo $user->getuseremail();?>" name="email"><br><br>
                 <p>Telefono:</p>
