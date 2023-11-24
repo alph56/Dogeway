@@ -73,9 +73,9 @@
               <li><a href="#">ADOPCION</a></li>
               <li><a>PERFIL</a><br>
                   <ul class="submenu">
-                      <li><a>Ver Perfil</a></li>
+                      <li><a href="http://localhost/Dogeway/Visualizacion/visualizacion-main.php">Ver Perfil</a></li>
                       <li> <a href="http://localhost/Dogeway/RegistroMascota/registro.php">Registrar Mascota</a></li>
-                      <li><a href="#">Editar Perfil</a></li>
+                      <li><a href="http://localhost/Dogeway/Visualizacion/visualizacion-main.php">Editar Perfil</a></li>
                   </ul>
               </li>
               <li><a href="http://localhost/Dogeway/Chat/users.php">CHAT</a></li>
