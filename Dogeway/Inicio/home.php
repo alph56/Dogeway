@@ -55,12 +55,30 @@
             <div class="logo"> DOGEWAY</div> </div>
             <ul class="menu">
               <li><a href="#">MATCH</a></li>
-              <li><a href="#">ADOPCION</a></li>
+              <li><a href="#">ADOPCION</a>
+                    <ul class="submenu">
+                        <form enctype= "multipart/form-data" action="http://localhost/Dogeway/Match/adopcion.php" method="post">
+                        <label class="Filtro">
+                            <select name ="filt"> 
+                            <option value="0">Todas las especies</option>
+                            <option value="1">Perros</option>
+                            <option value="2">Gatos</option>
+                            <option value="3">Aves</option>
+                            <option value="4">Reptiles</option>
+                            <option value="5">Acuaticos</option>
+                            <option value="6">Roedores</option>
+                            </select></label>
+                              
+                            <br><br>
+                            <tr><input type="submit" name="filtro" value="Filtrar busqueda">
+                        </form>
+                        </ul>
+              </li>
               <li><a>PERFIL</a><br>
                   <ul class="submenu">
                       <li><a href="http://localhost/Dogeway/Visualizacion/visualizacion-main.php">Ver Perfil</a></li>
                       <li> <a href="http://localhost/Dogeway/RegistroMascota/registro.php">Registrar Mascota</a></li>
-                      <li><a href="http://localhost/Dogeway/Visualizacion/visualizacion-main.php">Editar Perfil</a></li>
+                      <li><a href="#">Editar Perfil</a></li>
                   </ul>
               </li>
               <li><a href="http://localhost/Dogeway/Chat/users.php">CHAT</a></li>
@@ -69,8 +87,6 @@
         </nav>
         <section>
         <h1>Bienvenido <?php echo $user->getNombre(); echo $user->getuserId(); echo $user->getusername(); ?> </h1>
-          <h2 class="especial">Revisa las funciones en la barra de arriba</h2>
-          <img class="subtitulo-main welcome" src="http://localhost/Dogeway/Imagenes/doggy_welcome.png">
         </section>
     </header>
     
