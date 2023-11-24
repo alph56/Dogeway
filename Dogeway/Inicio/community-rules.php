@@ -25,12 +25,12 @@
                 <li><a href="http://localhost/Dogeway/Registro/registro.php">REGISTRARSE</a></li>
                 <li><a>NOSOTROS</a><br>
                     <ul class="submenu">
-                        <li><a href="#">Reglas de la comunidad</a></li>
                         <li><a href="http://localhost/Dogeway/mision.php">MISION</a></li>
                         <li><a href="http://localhost/Dogeway/vision.php">VISION</a></li>
                         <li><a href="http://localhost/Dogeway/contacto.php">CONTACTO</a></li>
                     </ul>
                 </li>
+                <li><a href="../index.php">REGRESAR</a></li>
             </ul>
         </nav>
                 <div class="intro">

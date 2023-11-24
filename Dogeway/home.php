@@ -21,7 +21,6 @@
             </div>
 
             <ul class="menu">
-              <li><ahref="http://localhost/Dogeway/Inicio/community-rules.php">Reglas de la comunidad</a></li>
                 <li><a href="Inicio/index.php">INICIAR SESION</a></li>
                 <li><a href="Registro/registro.php">REGISTRARSE</a></li>
                 <li><a>NOSOTROS</a><br>
@@ -31,6 +30,7 @@
                         <li><a href="contacto.php">CONTACTO</a></li>
                     </ul>
                 </li>
+              <li><ahref="http://localhost/Dogeway/Inicio/community-rules.php">REGLAS DE LA COMUNIDAD</a></li>
             </ul>
         </nav>
                 <div class="intro">
