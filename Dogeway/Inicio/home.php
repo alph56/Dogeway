@@ -55,9 +55,9 @@
             <div class="logo"> DOGEWAY</div> </div>
             <ul class="menu">
               <li><a href="#">MATCH</a></li>
-              <li><a href="#">ADOPCION</a>
+              <li><a href="http://localhost/Dogeway/Adopcion/adopcion.php">ADOPCION</a>
                     <ul class="submenu">
-                        <form enctype= "multipart/form-data" action="http://localhost/Dogeway/Match/adopcion.php" method="post">
+                        <form enctype= "multipart/form-data" action="http://localhost/Dogeway/Adopcion/adopcion.php" method="post">
                         <label class="Filtro">
                             <select name ="filt"> 
                             <option value="0">Todas las especies</option>
@@ -70,7 +70,7 @@
                             </select></label>
                               
                             <br><br>
-                            <tr><input type="submit" name="filtro" value="Filtrar busqueda">
+                            <tr><input type="submit" name="filtro" value="  Filtrar busqueda">
                         </form>
                         </ul>
               </li>
