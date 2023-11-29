@@ -41,7 +41,8 @@
                     echo 'mostrarError("' . $errorRegistro . '");';
                     echo '</script>';
                 }
-        
+            ?>
+            <?php
                 $allpets = mysqli_query($conexion, "SELECT * FROM mascota WHERE id = '$IDMASC'");
                 $resultado = mysqli_num_rows($allpets);
                 while($consultapets = mysqli_fetch_array($allpets)){
@@ -56,7 +57,7 @@
                         else if($consultapets['especie'] == 5){$Especie = 'Acuaticos';}
                         else if($consultapets['especie'] == 6){$Especie = 'Roedores';}
                         else{$consultapets['especie'] = 'Desconocido';}
-            ?>
+            ?>        
                     
                     <form action="update-pet.php" method="post"><p>
                         <?php $IDMASC ?></p>
