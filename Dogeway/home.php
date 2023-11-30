@@ -4,7 +4,7 @@
 
 <head>
     <title>DOGEWAY</title>
-    <link rel="stylesheet" href="http://localhost/Dogeway/CSS/index.css">
+    <link rel="stylesheet" href="http://localhost/Dogeway/CSS/indexs.css">
 </head>
 
 <body>
@@ -28,9 +28,9 @@
                         <li><a href="mision.php">MISION</a></li>
                         <li><a href="vision.php">VISION</a></li>
                         <li><a href="contacto.php">CONTACTO</a></li>
+                        <li><a href="community-rules.php">NORMAS</a></li>
                     </ul>
                 </li>
-              <li><ahref="http://localhost/Dogeway/Inicio/community-rules.php">REGLAS DE LA COMUNIDAD</a></li>
             </ul>
         </nav>
                 <div class="intro">

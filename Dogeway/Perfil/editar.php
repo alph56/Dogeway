@@ -1,6 +1,7 @@
 <?php 
     include_once '../Inicio/includes/user.php';
     include_once '../Inicio/includes/user_session.php';
+    include 'config.php';
     
     $userSession = new UserSession();
     $user = new User();
@@ -8,7 +9,23 @@
     if(isset($_SESSION['user'])){
     $user->setUser($userSession->getCurrentUser());
 
-    $id_usuario = $user->getuserId();
+    $idMascota = $_GET['id'];
+    $sql = "SELECT * FROM mascota WHERE id = $idMascota";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $nombreMascota = $row['nombreMascota'];
+        $edad = $row['edad'];
+        $descripcion = $row['descripcion'];
+        $raza = $row['raza'];
+        $especificaciones = $row['especificaciones'];
+        $caracteristicas = $row['caracteristicas'];
+        $especie = $row['especie'];
+        $categoria = $row['categoria'];
+          
+    } else {
+        echo "No se encontraron datos para la mascota con ID: $idMascota";
+    }
     
 ?>
 
@@ -16,7 +33,7 @@
 <html>
     <head>
         <link href="../CSS/registroMascota.css" rel="stylesheet" type="text/css" />
-        <title>Registro de Mascota</title>
+        <title>Edición de Mascota</title>
 
         <script src="../Chat/javascript/jquery-3.3.1.min.js"></script>
 
@@ -35,7 +52,7 @@ function validar() {
     var categoria = $('select[name=categoria]').val();
 
     if (nombreMascota == '' || edad == '' || descripcion == '' || raza == '' || especificaciones == '' ||
-        caracteristicas == '' || especie == '0' || categoria == '0' || archivo === "" || archive === "") {
+        caracteristicas == '' || especie == '0' || categoria == '0') {
         mostrarMensajeError('Faltan campos por llenar');
         return false;
     }
@@ -121,29 +138,29 @@ function mostrarMensajeError(mensaje) {
     </nav>
 
     <div class="registromascota"> 
-        <h2 class="titulomasc">REGISTRO DE MASCOTA</h2>
+        <h2 class="titulomasc">EDITAR MASCOTA</h2>
         
         <div id="mensaje"></div>
         
-        <form action="altaregistro.php" method="post" enctype= "multipart/form-data">
+        <form action="actualizar.php" method="post" enctype= "multipart/form-data">
             <div class="columna">
 
-                <input type="hidden" name="id_usuario" id="id_usuario" value="<?php echo $id_usuario; ?>">
-                <input type="text" id="nombreMascota" name="nombreMascota" value="" placeholder="Nombre de tu mascota"><br><br>
-                <input type="number" id="edad" name="edad" value="" placeholder="Edad (En años)"><br><br>
-                <input type="text" id="descripcion" name="descripcion" value=""  placeholder="Agrega una descripción"><br><br>
-                <input type="text" id="raza" name="raza"  value=""  placeholder="Ingresa la raza"><br><br>
-                <input type="text" id="especificaciones" name="especificaciones"  value=""  placeholder="Especificaciones (Sano,sordo...)"><br><br>
-                <input type="text" id="caracteristicas" name="caracteristicas"  value=""  placeholder="Caraterísticas (Color,Tamaño...)"><br><br>
+                <input type="hidden" name="id_Mascota" id="id_Mascota" value="<?php echo $idMascota; ?>">
+                <input type="text" id="nombreMascota" name="nombreMascota" value="<?php echo $nombreMascota; ?>" placeholder="Nombre de tu mascota"><br><br>
+                <input type="number" id="edad" name="edad" value="<?php echo $edad; ?>" placeholder="Edad (En años)"><br><br>
+                <input type="text" id="descripcion" name="descripcion" value="<?php echo $descripcion; ?>"  placeholder="Agrega una descripción"><br><br>
+                <input type="text" id="raza" name="raza"  value="<?php echo $raza;?>"  placeholder="Ingresa la raza"><br><br>
+                <input type="text" id="especificaciones" name="especificaciones"  value="<?php echo $especificaciones; ?>"  placeholder="Especificaciones (Sano,sordo...)"><br><br>
+                <input type="text" id="caracteristicas" name="caracteristicas"  value="<?php echo $caracteristicas; ?>"  placeholder="Caraterísticas (Color,Tamaño...)"><br><br>
                 <label class="categoria">
                 <select name="especie">
-                    <option value="0">Selecciona su especie</option>
-                    <option value="1">Perros</option>
-                    <option value="2">Gatos</option>
-                    <option value="3">Aves</option>
-                    <option value="4">Reptiles</option>
-                    <option value="5">Acuaticos</option>
-                    <option value="6">Roedores</option>
+                    <option value="0" <?php echo ($especie == 0) ? "selected" : ""; ?>>Selecciona su especie</option>
+                    <option value="1" <?php echo ($especie == 1) ? "selected" : ""; ?>>Perros</option>
+                    <option value="2" <?php echo ($especie == 2) ? "selected" : ""; ?>>Gatos</option>
+                    <option value="3" <?php echo ($especie == 3) ? "selected" : ""; ?>>Aves</option>
+                    <option value="4" <?php echo ($especie == 4) ? "selected" : ""; ?>>Reptiles</option>
+                    <option value="5" <?php echo ($especie == 5) ? "selected" : ""; ?>>Acuaticos</option>
+                    <option value="6" <?php echo ($especie == 6) ? "selected" : ""; ?>>Roedores</option>
                 </select></label>
             </div>
 
@@ -164,14 +181,14 @@ function mostrarMensajeError(mensaje) {
 
                 <label class="categoria">
                 <select name="categoria">
-                    <option value="0">Selecciona su categoria</option>
-                    <option value="1">Match</option>
-                    <option value="2">Adopcion</option>
+                    <option value="0" <?php echo ($categoria == 0) ? "selected" : ""; ?>>Selecciona su categoria</option>
+                    <option value="1" <?php echo ($categoria == 1) ? "selected" : ""; ?>>Match</option>
+                    <option value="2" <?php echo ($categoria == 2) ? "selected" : ""; ?>>Adopcion</option>
                 </select></label>
 
             </div>
             
-            <input type="submit" name="registrar" onclick=" return validar();" value="Registrar">
+            <input type="submit" name="registrar" onclick=" return validar();" value="Editar">
 
         </form>
     </div>

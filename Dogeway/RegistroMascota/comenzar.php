@@ -27,7 +27,7 @@
     </div>
 
     <div class="btn-container">
-        <a class="boton" href="#">Ir a conocer mascotas</a>
+        <a class="boton" href="../Match/lista.php">Ir a conocer mascotas</a>
         <a class="boton" href="../index.php">Volver a la pagina principal</a>
     </div>
     

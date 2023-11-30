@@ -55,8 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_usuario = $_POST['id_usuario']; 
 
     // Consulta de inserción
-    $sql = "INSERT INTO mascota (categoria, fotografiaMascota, cartilla, especie, caracteristicas, especificaciones, edad, raza, descripcion, nombreMascota, id_usuario)
-            VALUES ('$categoria', '$fotografiaMascota', '$cartilla', '$especie', '$caracteristicas', '$especificaciones', '$edad', '$raza', '$descripcion', '$nombreMascota', $id_usuario)";
+    $sql = "INSERT INTO mascota (categoria, fotografiaMascota, cartilla, especie, caracteristicas, especificaciones, edad, raza, descripcion, nombreMascota, id_usuario, fecha)
+            VALUES ('$categoria', '$fotografiaMascota', '$cartilla', '$especie', '$caracteristicas', '$especificaciones', '$edad', '$raza', '$descripcion', '$nombreMascota', $id_usuario, NOW())";
 
     // Ejecutar la consulta
     if ($conexion->query($sql) === TRUE) {
