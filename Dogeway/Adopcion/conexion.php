@@ -71,11 +71,12 @@ function adopcion(idUs1, idUs2, idM) {
 
     xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200){
-
+      
     }
     };
     
     xhttp.open("GET", "insAdop.php? id1=" + idUs1 + "&id2=" + idUs2 + "&id3=" + idM, true);
     xhttp.send();
+    
 }
 </script>

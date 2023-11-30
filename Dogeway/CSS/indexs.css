@@ -64,6 +64,7 @@ header{
 .menu li a{
     color:aliceblue;
     text-decoration: none;
+    transition: all;
     font-size: 18px;
     padding: 20px;
     font-family: Arial;
@@ -86,7 +87,6 @@ header{
     text-decoration: none;
     font-size: 12px;
     padding: 15px;
-    margin: 10px;
     font-family: Arial;
 }
 
@@ -95,7 +95,6 @@ header{
     position: absolute;
     background-color: #009d71;
     margin-top: 15px;
-    margin-bottom: 5px;
     border-radius: 10px;
     transition: 1s;
 }
@@ -103,9 +102,10 @@ header{
 
 h1 {
     font-size: 30px;
-    margin-left: 345px;
+    margin: 20px;
     color: aliceblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
     letter-spacing: 2px;
     text-shadow: black 6px 6px 8px;
 }
@@ -120,16 +120,16 @@ h2 {
 }
 
 .info {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.5;
     color: aliceblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: justify;
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
     letter-spacing: 5px;
     font-display: auto;
     text-shadow: black 6px 6px 8px;
-    margin: 10px;
-    padding: 10px;
 }
 
   p.centrado {
@@ -155,7 +155,51 @@ h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
-  .muchotexto {
+  .welcome {
+    margin-left: 60px;
+    margin-top: 30px;
+    width: 400px;
+    height: 400px;
+  }
+
+  .notificaciones{
+    margin-top: 30px;
+    background-color: #cfcfcf;
+    width: 250px;
+    height: 400px;
+    padding: 60px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 60px;
+    border: 3px solid #05684c;
+  }
+
+  .recuadro {
     display: flex;
-    justify-content: space-between;
-}
+  }
+
+  .columna_izquierda{
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .columna_derecha{
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .fila1 {
+    display: flex;
+    padding: 10px;
+   
+  }
+
+  .fila2 {
+    display: flex;
+    padding: 10px;
+    margin-left: 50%;
+  }

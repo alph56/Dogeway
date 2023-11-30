@@ -42,10 +42,9 @@
   </div>
   <div class="wrapper2">
     <div class="texto">
-      <img src="../Imagenes/siluetachat.png" width="150px" height="150px" align="center">
-    <a href="#">Aun no tienes chats disponibles? Conoce usuarios aqui</a>
+        <img src="../Imagenes/siluetachat.png" width="150px" height="150px" align="center">
+        <a href="../Match/lista.php">Aun no tienes chats disponibles? Conoce usuarios aqui</a>
     </div>
- 
   </div>
 
   <script src="javascript/users.js"></script>

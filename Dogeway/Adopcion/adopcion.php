@@ -6,8 +6,6 @@
     $userSession = new UserSession();
     $user = new User();
 
-    
-
     if(isset($_SESSION['user'])){
     $user->setUser($userSession->getCurrentUser());
    
@@ -20,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>ADOPCION</title>
-    <link rel="stylesheet" href="http://localhost/Dogeway/CSS/match.css">
+    <link rel="stylesheet" href="http://localhost/Dogeway/CSS/adopt.css">
     
 </head>
 <body>
@@ -30,7 +28,16 @@
                 <div class="logo"> DOGEWAY</div>
         </div>
         <ul class="menu">
-        <li><a href="../index.php">REGRESAR</a></li>
+              <li><a href="../Match/lista.php">MATCH</a></li>
+              <li><a href="../Adopcion/adopcion.php">ADOPCION</a></li>
+              <li><a href="../Perfil/lista.php">PERFIL</a><br>
+                  <ul class="submenu">
+                      <li> <a href="../RegistroMascota/registro.php">Registrar Mascota</a></li>
+                  </ul>
+              </li>
+              <li><a href="../Chat/users.php">CHAT</a></li>
+              <li><a href="../index.php">PAGINA PRINCIPAL</a></li>
+              <li><a href="../Inicio/includes/logout.php">CERRAR SESION</a></li>
         </ul>
     </nav>
         
@@ -69,64 +76,43 @@
              
     ?>
        
-        <div class="recuadro" >
+       <div class="recuadro" >
+            <div class="columna_izquierda">
+                <img class = "imgMascota" src="../RegistroMascota/archivos/<?php echo $consultaMs['fotografiaMascota']?>" class="card-img-top" alt="...">
+                       <div class="texto">
+                            <?php
+                                    echo $consultaMs['nombreMascota']. ', ' . $consultaMs['edad'] . "<br>";
+                                    $idUs1 = $consultaUs['id'];//El usuario dueño de la mascota
+                                    $idUs2 = $user->getuserId();//El usuario que quiere adoptar
+                                    $idM = $consultaMs['id'];//La mascota 
+                                    echo" <br><a href ='../Chat/users.php' class='adopcion' onclick='adopcion($idUs1, $idUs2, $idM)'>ADOPTAR</a><br>";
+                                ?>
+                       </div> 
+            </div>
 
-           <ul class = "tabla">
-                <ul>
-                    <li class = "c1">
-                    <img class = "imgMascota" src="../RegistroMascota/archivos/<?php echo $consultaMs['fotografiaMascota']?>" class="card-img-top" alt="...">
-                    </li>
+            <div class="columna_derecha">
+                <div class="fila1">
+                    <img class = "imgUsuario" src="../Registro/archivos/<?php echo $consultaUs['fotografia']?>" class="card-img-top" alt="...">
+                    <div class="texto2">
+                    <p>@<?php 
+                                echo $consultaUs['nickname'], "<br><br>";
+                                echo '● ' . $consultaUs['nombre'] . ' ' . $consultaUs['apellidos'] . "<br><br>";
+                                echo '● ' . $consultaUs['municipio'], "<br>";
+                        ?></p>
+                    </div>
 
-                    <li class = "c2">
-                        <ul class ="u1">
-                        <img class = "imgUsuario" src="../Registro/archivos/<?php echo $consultaUs['fotografia']?>" class="card-img-top" alt="...">
-
-                        </ul>
-
-                        <ul class ="u2">    
-                            <div class ="textoUsuario">
-                                <p><?php echo $consultaUs['nombre'], "<br> ";
-                                         echo $consultaUs['apellidos'],"<br><br>";
-                                         echo $consultaUs['municipio'], "<br>";
-                                         echo $consultaUs['fechanac'], "<br>";
-                                         echo $consultaUs['id'], "<br>";
-
+                </div>
+<div class = "fila2">
+                        <div class="texto3">
+                            <p><?php 
+                                    echo '(❁) ' . $consultaMs['raza'] . "<br>";
+                                    echo '(❁) ' . $consultaMs['especificaciones'],"<br>";
+                                    echo '(❁) ' . $consultaMs['caracteristicas'],"<br>";
+                                    echo '(❁) ' . $consultaMs['descripcion'], "<br><br>";
                                 ?></p>
-                            </div>
-                        </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class = "c3">
-                        <div class = "textoMascota">
-                            <p><?php echo $consultaMs['nombreMascota'], "<br><br> ";
-                                     echo $consultaMs['raza'],"<br><br>";
-                                     echo $consultaMs['edad'], " Año(s)<br><br>";
-                                     echo $consultaMs['descripcion'], "<br>";
-                                     echo $consultaMs['id'], "<br>";
-                            ?></p>
                         </div>
-                        
-                    </li>
-                    
-                    <li class = "c4">
-                        <?php 
-                            $idUs1 = $consultaUs['id'];//El usuario dueño de la mascota                            
-                            $idUs2 = $user->getuserId();//El usuario que quiere adoptar
-                            $idM = $consultaMs['id'];//La mascota 
-
-                                echo"
-                                <div class ='boton'>
-                                    <button  onclick='adopcion($idUs1, $idUs2, $idM)'> 
-                                        ADOPTAR
-                                    </button>
-                                </div>";
-                        
-                        ?>
-                    </li>
-                </ul>
-           </ul>
-            
+                    </div>
+            </div>
         </div>
 
     <?php
@@ -137,14 +123,10 @@
             }//fin de la iteracion principal <Mascotas>
         
     ?>
-         <?php
+        <?php
         if( $p == 0 )
           {?>
-            
-            <div class = "Empty">
-               <p class = "unu"> No hay mascotas papu unu</p>
-            </div>
-
+               <h2> No hay mascotas disponibles para adoptar :></h2>
         <?php }?>
             
 </body>

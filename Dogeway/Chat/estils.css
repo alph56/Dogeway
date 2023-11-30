@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background-image: url(../Imagenes/correo.jpg);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+/*Este es para el cuadro de la lista de usuarios*/
+.wrapper{
+  margin-left: 20px ;
+  margin-top: 20px ;
+  background: #fff;
+  max-width: 450px;
+  width: 50%;
+  height: 525px;
+  border-radius: 16px;
+  box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+              0 32px 64px -48px rgba(0,0,0,0.5);
+}
+
+.wrapper2{
+  margin-left: 20px ;
+  margin-top: 20px ;
+  background: #fff;
+  max-width: 750px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+              0 32px 64px -48px rgba(0,0,0,0.5);
+}
+
+.texto{
+  text-align: center;
+  margin-top: 40%;
+}
+
+/* Aqui empieza el editado de listado de usuarios*/
+.users{
+  padding: 25px 30px;
+}
+.users header,
+.users-list a{
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e6e6e6;
+  justify-content: space-between;
+}
+.wrapper img{
+  object-fit: cover;
+  border-radius: 50%;
+}
+.users header img{
+  height: 50px;
+  width: 50px;
+}
+:is(.users, .users-list) .content{
+  display: flex;
+  align-items: center;
+}
+:is(.users, .users-list) .content .details{
+  color: #000;
+  margin-left: 20px;
+}
+:is(.users, .users-list) .details span{
+  font-size: 18px;
+  font-weight: 500;
+}
+.users header .logout{
+  display: block;
+  background: #333;
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 17px;
+}
+.users .search{
+  margin: 20px 0;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+.users .search .text{
+  font-size: 18px;
+}
+.users .search input{
+  position: absolute;
+  height: 42px;
+  width: calc(100% - 50px);
+  font-size: 16px;
+  padding: 0 13px;
+  border: 1px solid #e6e6e6;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+.users .search input.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+.users .search button{
+  position: relative;
+  z-index: 1;
+  width: 47px;
+  height: 42px;
+  font-size: 17px;
+  cursor: pointer;
+  border: none;
+  background: #fff;
+  color: #333;
+  outline: none;
+  border-radius: 0 5px 5px 0;
+  transition: all 0.2s ease;
+}
+.users .search button.active{
+  background: #333;
+  color: #fff;
+}
+.search button.active i::before{
+  content: '\f00d';
+}
+.users-list{
+  max-height: 310px;
+  overflow-y: auto;
+}
+:is(.users-list, .chat-box)::-webkit-scrollbar{
+  width: 0px;
+}
+.users-list a{
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  padding-right: 15px;
+  border-bottom-color: #f1f1f1;
+}
+.users-list a:last-child{
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+.users-list a img{
+  height: 40px;
+  width: 40px;
+}
+.users-list a .details p{
+  color: #67676a;
+}
+.users-list a .status-dot{
+  font-size: 12px;
+  color: #468669;
+  padding-left: 10px;
+}
+.users-list a .status-dot.offline{
+  color: #ccc;
+}
+
+/* Chat Area */
+.chat-area header{
+  display: flex;
+  align-items: center;
+  padding: 18px 30px;
+}
+.chat-area header .back-icon{
+  color: #333;
+  font-size: 18px;
+}
+.chat-area header img{
+  height: 45px;
+  width: 45px;
+  margin: 0 15px;
+}
+.chat-area header .details span{
+  font-size: 17px;
+  font-weight: 500;
+}
+.chat-box{
+  position: relative;
+  min-height: 350px;
+  max-height: 350px;
+  overflow-y: auto;
+  padding: 10px 30px 20px 30px;
+  background: #f7f7f7;
+  box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%),
+              inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+}
+.chat-box .text{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: calc(100% - 50px);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.chat-box .chat{
+  margin: 15px 0;
+}
+.chat-box .chat p{
+  word-wrap: break-word;
+  padding: 8px 16px;
+  box-shadow: 0 0 32px rgb(0 0 0 / 8%),
+              0rem 16px 16px -16px rgb(0 0 0 / 10%);
+}
+.chat-box .outgoing{
+  display: flex;
+}
+.chat-box .outgoing .details{
+  margin-left: auto;
+  max-width: calc(100% - 130px);
+}
+.outgoing .details p{
+  background: #333;
+  color: #fff;
+  border-radius: 18px 18px 0 18px;
+}
+.chat-box .incoming{
+  display: flex;
+  align-items: flex-end;
+}
+.chat-box .incoming img{
+  height: 35px;
+  width: 35px;
+  border-radius: 10px;
+}
+.chat-box .incoming .details{
+  margin-right: auto;
+  margin-left: 10px;
+  max-width: calc(100% - 130px);
+}
+.incoming .details p{
+  background: #888484;
+  color: #333;
+  border-radius: 18px 18px 18px 0;
+}
+.typing-area{
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.typing-area input{
+  height: 45px;
+  width: calc(100% - 58px);
+  font-size: 16px;
+  padding: 0 13px;
+  border: 1px solid #928b8b;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+}
+.typing-area button{
+  color: #fff;
+  width: 55px;
+  border: none;
+  outline: none;
+  background: #333;
+  font-size: 19px;
+  cursor: pointer;
+  opacity: 0.7;
+  pointer-events: none;
+  border-radius: 0 5px 5px 0;
+  transition: all 0.3s ease;
+}
+.typing-area button.active{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responive media query */
+@media screen and (max-width: 450px) {
+  .form, .users{
+    padding: 20px;
+  }
+  .form header{
+    text-align: center;
+  }
+  .form form .name-details{
+    flex-direction: column;
+  }
+  .form .name-details .field:first-child{
+    margin-right: 0px;
+  }
+  .form .name-details .field:last-child{
+    margin-left: 0px;
+  }
+
+  .users header img{
+    height: 45px;
+    width: 45px;
+  }
+  .users header .logout{
+    padding: 6px 10px;
+    font-size: 16px;
+  }
+  :is(.users, .users-list) .content .details{
+    margin-left: 15px;
+  }
+
+  .users-list a{
+    padding-right: 10px;
+  }
+
+  .chat-area header{
+    padding: 15px 20px;
+  }
+  .chat-box{
+    min-height: 400px;
+    padding: 10px 15px 15px 20px;
+  }
+  .chat-box .chat p{
+    font-size: 15px;
+  }
+  .chat-box .outogoing .details{
+    max-width: 230px;
+  }
+  .chat-box .incoming .details{
+    max-width: 265px;
+  }
+  .incoming .details img{
+    height: 30px;
+    width: 30px;
+  }
+  .chat-area form{
+    padding: 20px;
+  }
+  .chat-area form input{
+    height: 40px;
+    width: calc(100% - 48px);
+  }
+  .chat-area form button{
+    width: 45px;
+  }
+}
+
+/*Aqui empieza el menu y los submenus*/
+
+header{
+  width: 100%;
+}
+
+.nav {
+  width: 100%;
+  background: #009d71;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  transition: all 1s ease;
+}
+
+.rana{
+  height: 60px;
+  width: 60px;
+}
+
+.ranalogo{
+  display: flex;
+  align-items: center;
+}
+
+.logo{
+  font-size: 40px;
+  color:aliceblue;
+  font-weight: 100;
+  font-weight: bold;
+  padding-left: 15px;
+  
+}
+
+.logo a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li {
+  list-style: none;
+  margin: 10px;
+  color:aliceblue;
+  font-weight: bold;
+}
+
+.menu li a{
+  color:aliceblue;
+  text-decoration: none;
+  transition: all;
+  font-size: 18px;
+  padding: 20px;
+  font-family: Arial;
+}
+
+.menu li a:hover {
+  padding: 10px 20px;
+  background: #789dca;
+  color: black;
+  border-radius: 15px;
+  transition: 1s;
+}
+
+.submenu{
+  display: none;
+}
+
+.submenu li a{
+  color:aliceblue;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 15px;
+  font-family: Arial;
+}
+
+.menu li:hover .submenu{
+  display: block;
+  position: absolute;
+  background-color: #009d71;
+  margin-top: 15px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.reportar{
+  padding-left: 20px;
+}
+
+.bloquear{
+  padding-left: 20px;
+}
+
+.rating {
+  padding-left: 20px;
+}
+
+button {
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.custom-icon {
+  font-size: 25px;
+  color: red;
+  transition: color 0.3s ease; 
+}
+
+.custom-icon.with-border {
+  border: 2px solid white;
+}
+
+button:hover .custom-icon {
+  color: rgb(114, 4, 4); 
+}
+
+button:active .custom-icon {
+  color: rgb(114, 4, 4);
+}
+
+.custom-icons {
+  font-size: 25px;
+  color: rgb(255, 238, 0);
+  transition: color 0.3s ease; 
+}
+
+.custom-icons.with-border {
+  border: 2px solid white;
+}
+
+button:hover .custom-icons {
+  color: rgb(245, 224, 105); 
+}
+
+button:active .custom-icons {
+  color: rgb(247, 245, 126);
+}
+
+#cuadroReporte {
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1fb689;
+  padding: 10px;
+  display: none;
+}
+
+.reportar {
+  position: relative;
+}
+
+#cuadroReporte .boton {
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-top: 5px;
+  background-color: #1fb689;
+  color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+#cuadroReporte .boton:hover {
+  background-color: #789dca;
+}
+
+.estrella {
+  font-size: 2em;
+  cursor: pointer;
+  color: #888282; 
+}
+
+.estrella.iluminada {
+  color: #f8d13e; 
+}
+
+#cuadroRating {
+  width: 200px;
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1fb689;
+  padding: 10px;
+  display: none;
+}
+
+.rating {
+  position: relative;
+}
+
+#cuadroRating .boton {
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-top: 5px;
+  background-color: #009d71;
+  color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+#cuadroRating .boton:hover {
+  background-color: #789dca;
+}
+
+.foto{
+  border-radius: 20px;
+}

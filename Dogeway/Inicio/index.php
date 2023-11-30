@@ -17,22 +17,28 @@ if(isset($_SESSION['user'])){
     $password = $_POST['password'];
     $passForm = md5($password);
 
-    if ($user->userExists($userForm, $passForm) === true) {
+    if ($user->userExists($userForm, $passForm) === "admin") {
+        $userSession->setCurrentUser($userForm);
+        $user->setUser($userForm);
+        header ("location: ../admin/home.php");
+
+    } elseif ($user->userExists($userForm, $passForm) === true) {
         // Usuario válido y verificado
         $userSession->setCurrentUser($userForm);
         $user->setUser($userForm);
         include_once 'home.php';
+
     } elseif ($user->userExists($userForm, $passForm) === "nover") {
         // El usuario existe pero no está verificado
         $errorLogin = "Tu cuenta no está verificada.";
         include_once 'includes/iniciosesion.php';
-       
-    }  else if ($user->userExists($userForm, $passForm) === "sus") {
+    
+    } elseif ($user->userExists($userForm, $passForm) === "sus") {
         // El usuario esta suspendido
         $errorLogin = "Tu cuenta esta suspendida";
         include_once 'includes/iniciosesion.php';
-    }
-     else {
+
+    } else {
         // El usuario no existe o contraseña incorrecta
         $errorLogin = "Nickname y/o contraseña es incorrecto.";
         include_once 'includes/iniciosesion.php';

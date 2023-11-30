@@ -1,0 +1,407 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-image: url(../Imagenes/fondo.jpg);
+  background-size: cover;
+  background-position: center;  
+}
+
+
+header{
+    width: 100%;
+  }
+  
+  .nav {
+    width: 100%;
+    background: #009d71;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    transition: all 1s ease;
+  }
+  
+  .rana{
+    height: 60px;
+    width: 60px;
+  }
+  
+  .ranalogo{
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo{
+    font-size: 40px;
+    color:aliceblue;
+    font-weight: 100;
+    font-weight: bold;
+    padding-left: 15px;
+    
+  }
+  
+  .logo a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  .menu li {
+    list-style: none;
+    margin: 10px;
+    color:aliceblue;
+    font-weight: bold;
+  }
+  
+  .menu li a{
+    color:aliceblue;
+    text-decoration: none;
+    transition: all;
+    font-size: 18px;
+    padding: 20px;
+    font-family: Arial;
+  }
+  
+  .menu li a:hover {
+    padding: 10px 20px;
+    background: #789dca;
+    color: black;
+    border-radius: 15px;
+    transition: 1s;
+  }
+  
+  .submenu{
+    display: none;
+  }
+  
+  .submenu li a{
+    color:aliceblue;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 15px;
+    font-family: Arial;
+  }
+  
+  .menu li:hover .submenu{
+    display: block;
+    position: absolute;
+    background-color: #009d71;
+    margin-top: 15px;
+    border-radius: 10px;
+    transition: 1s;
+  }
+
+  h1 {
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .content .buttons {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 270%);
+  }
+  
+  .content .buttons .no i {
+    color: #fd2e79;
+    font-size: 33px;
+  }
+  
+  .content .buttons .star i {
+    color: #2bb1ff;
+    font-size: 33px;
+  }
+  
+  .content .buttons .heart i {
+    color: #11e298;
+    font-size: 32px;
+  }
+  
+  .content .buttons .no,
+  .content .buttons .star,
+  .content .buttons .heart {
+    background-color: #fff;
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 70px;
+    margin: 4px;
+    transition: 0.2s transform;
+  }
+  
+  .content .buttons .no:hover,
+  .content .buttons .star:hover,
+  .content .buttons .heart:hover {
+    transform: scale(1.1);
+  }
+  
+  .content .buttons .no {
+    width: 60px;
+    height: 60px;
+  }
+
+  .container .card {
+    position: relative;
+    height: 400px;
+  }
+  
+  .content .card .user {
+    width: 340px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .content {
+    width: 50%;
+    display: none;
+    padding: 20px 0;
+	  align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.content.visible {
+  animation: fadeIn 0.5s ease-in-out; 
+}
+
+.visible {
+    display: block;
+}
+
+.seleccion {
+  border: 1px solid #ccc;
+  width: 340px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+
+#popupContainer {
+  display: none;
+  position: absolute;
+  font-size: 20px;
+  top: 50%;
+  left: 50%;
+  color:#0fad98;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+  background-color: white;
+  background-image: url(../Imagenes/fondopopup.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 140px 60px 140px 60px;
+  z-index: 999;
+  text-align: center;
+  border-radius: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+#closeButton img {
+  width: 60px;
+  height: 60px; 
+}
+
+#closeButton {
+  position: absolute;
+  border: none;
+  width: 70px;
+  height: 70px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 70%);
+  transition: 0.2s transform;
+}
+
+#closeButton:hover {
+  transform: translate(-50%, 70%) scale(1.1);
+}
+
+#imagenMascota img {
+  width: 340px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#mascotaSelect{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-175%, 650%);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  color: green;
+  font-size: 16px;
+}
+
+.content .card .user .profile {
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+  color: white;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.content .card .user .profile .name {
+  font-size: 30px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.1);
+  font-weight: 800;
+}
+.content .card .user .profile .ubicacion {
+  font-size: 15px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.1);
+  font-weight: 800;
+}
+.content .card .user .profile .descripcion {
+  font-size: 15px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.1);
+  font-weight: 800;
+}
+
+.profile {
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+  color: white;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.profiles {
+	position: absolute;
+  top: 68%;
+  left: 30%;
+  transform: translate(-80%, -30%);
+  color: white;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.profiles #nombreMascota {
+  font-size: 30px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.1);
+  font-weight: 800;
+}
+.profiles #ubicacion {
+  font-size: 15px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.1);
+  font-weight: 800;
+}
+.profiles #descripcion {
+  font-size: 15px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.1);
+  font-weight: 800;
+}
+
+#efecto {
+  opacity: 0; 
+  transition: opacity 1s ease-in-out;
+}
+
+#efecto.visible {
+  opacity: 1;
+}
+
+#efecto1 {
+  opacity: 1; 
+ 
+}
+
+
+#nombreMascota,
+#descripcion,
+#ubicacion,
+#foto,
+#imagenMascota {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#foto {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(65%, -285%);
+}
+
+#fotografiass{
+  border-radius: 50%;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(60%, -170%);
+}
+#nombreMascota.animated.fadeIn,
+#descripcion.animated.fadeIn,
+#ubicacion.animated.fadeIn,
+#foto.animated.fadeIn,
+#imagenMascota.animated.fadeIn {
+    opacity: 1;
+}
+
+.filtro {
+  position: relative;
+  display: inline-block;
+}
+
+.hidden-input {
+  display: none;
+}
+
+.material-symbols-outlined {
+  font-size: 16px;
+  cursor: pointer;
+}
+

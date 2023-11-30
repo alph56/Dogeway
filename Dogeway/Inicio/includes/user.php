@@ -13,7 +13,11 @@ class User extends DB{
     
         if ($query->rowCount()) {
             $userData = $query->fetch(PDO::FETCH_ASSOC);
-            if ($userData['verificado'] == 1) {
+            if($userData['verificado'] == 1 && $userData['admin'] == 1) {
+                // El usuario es admin
+                $this->updateUserStatus($userData['id'], 'Disponible');
+                return "admin";
+            }else if ($userData['verificado'] == 1) {
                 // El usuario está verificado
                 $this->updateUserStatus($userData['id'], 'Disponible');
                 return true;
@@ -21,7 +25,7 @@ class User extends DB{
                 // El usuario está suspendido
                 $this->updateUserStatus($userData['id'], 'Suspendido');
                 return "sus";
-            }else {
+            } else {
                 // El usuario no está verificado
                 return "nover";
             }
@@ -54,9 +58,14 @@ class User extends DB{
             $this->fotografia = $currentUser['fotografia'];
             $this->UniqueId = $currentUser['unique_id'];
             $this->userId = $currentUser['id'];
+            $this->admin = $currentUser['admin'];
             $this->useremail = $currentUser['email'];
+            $this->municipio = $currentUser['municipio'];
             $this->usertel = $currentUser['telefono'];
             $this->usermun = $currentUser['municipio'];
+            $this->userIne = $currentUser['ine'];
+            $this->userCurp = $currentUser['curp'];
+
         }
     }
 
@@ -83,6 +92,15 @@ class User extends DB{
     public function getFotografia(){
         return $this->fotografia;
     }
+
+    public function getAdmin(){
+        return $this->admin;
+    }
+
+    public function getMunicipio(){
+        return $this->municipio;
+    }
+
     public function getuseremail(){
         return $this->useremail;
     }
@@ -93,6 +111,13 @@ class User extends DB{
 
     public function getusermun(){
         return $this->usermun;
+    }
+
+    public function getCurp(){
+        return $this->userCurp;
+    }
+    public function getIne(){
+        return $this->userIne;
     }
 }
 

@@ -57,7 +57,7 @@
     text-decoration: none;
     transition: all;
     font-size: 18px;
-    padding: 40px;
+    padding: 20px;
     font-family: Arial;
   }
   
@@ -68,6 +68,28 @@
     border-radius: 15px;
     transition: 1s;
   }
+
+  .submenu{
+    display: none;
+}
+
+.submenu li a{
+    color:aliceblue;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 15px;
+    font-family: Arial;
+    margin-top: 10px;
+}
+
+.menu li:hover .submenu{
+    display: block;
+    position: absolute;
+    background-color: #009d71;
+    margin-top: 15px;
+    border-radius: 10px;
+    transition: 1s;
+}
   
   
   .rana{
@@ -105,7 +127,7 @@
   
   .registromascota input[type = "text"],
   .registromascota input[type = "number"] {
-    width: 80%; 
+    width: 90%; 
     padding: 5px; 
     margin-bottom: 10px; 
   }
@@ -114,7 +136,7 @@
     width: 80%; 
     padding: 5px; 
     margin-bottom: 10px; 
-    margin-left: 20px;
+    margin-left: 25px;
   }
   
   
@@ -123,7 +145,7 @@
   }
   
   .custom-file-upload {
-    margin-left: 22px;
+    margin-left: 25px;
     margin-top: 35px;
     border: 1px solid #747171;
     font-size: 13px;
@@ -164,11 +186,4 @@
   label {
     display: block;
     margin-bottom: 10px;
-  }
-  
-  
-  #error-message {
-    font-size: 14px;
-    margin-top: 10px;
-    color: red;
   }
